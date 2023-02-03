@@ -1,0 +1,7 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.MuiAvatar-img {
+  object-position: 5% 10%;
+  object-fit: cover;
+}

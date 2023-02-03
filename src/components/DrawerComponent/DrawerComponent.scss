@@ -1,0 +1,32 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.drawer__list {
+  list-style: none;
+  padding: 0 1rem;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+}
+
+.drawer__list--disappear {
+  animation: drawer-disappear 0.5s;
+  opacity: 0;
+}
+
+.drawer__list--appear {
+  animation: drawer-appear 0.5s;
+  top: 104.789px;
+  opacity: 1;
+}
+
+.drawer__item {
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  font-family: "Fredericka the Great", sans-serif;
+}
+
+.drawer__item:first-child {
+  border-top: 1px solid black;
+}
