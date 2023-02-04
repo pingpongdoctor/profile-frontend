@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
 import { useWindowSize } from "./Utils/utils";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
 const API_URL = process.env.REACT_APP_API_URL || "";
 function App() {
   //GET THE CURRENT WINDOW SIZE
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/detailed-project/:id" element={<DetailedProject />} />
         </Routes>
+        <FooterComponent />
       </div>
     </BrowserRouter>
   );

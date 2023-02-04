@@ -4,6 +4,7 @@
 .site-header {
   padding: 1rem;
   position: fixed;
+  height: 105px;
   z-index: 1000;
   width: 100%;
   background-color: white;
@@ -15,6 +16,10 @@
 .site-header__container {
   display: flex;
   align-items: center;
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 .site-header__name {

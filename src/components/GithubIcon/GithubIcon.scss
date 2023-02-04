@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.github-icon {
+  background-color: white;
+  width: fit-content;
+  border-radius: 50%;
+  height: 24px;
+}
+
+.github-icon__container {
+  width: 27px;
+  height: auto;
+  object-position: 0px -2px;
+}

@@ -1,2 +1,39 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.home-page {
+  padding-top: 105px;
+  position: relative;
+  height: 455px;
+}
+
+.home-page__content {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.home-page__video {
+  object-fit: cover;
+  height: 350px;
+  width: 100vw;
+  position: absolute;
+}
+
+.home-page__heading {
+  margin-bottom: 0;
+}
+
+.home-page__text {
+  font-size: 2.3rem;
+  font-family: "Tangerine", sans-serif;
+  margin: 1rem 0;
+}
