@@ -1,8 +1,19 @@
 import "./ButtonComponent.scss";
 
-export default function ButtonComponent({ btnClassName, btnContent, btnName }) {
+export default function ButtonComponent({
+  btnClassName,
+  btnContent,
+  btnName,
+  onClickHandler,
+  btnId,
+}) {
   return (
-    <button name={btnName} className={btnClassName}>
+    <button
+      id={btnId}
+      onClick={onClickHandler}
+      name={btnName}
+      className={btnClassName}
+    >
       {btnContent}
     </button>
   );

@@ -7,7 +7,7 @@ import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
 import { useWindowSize } from "./Utils/utils";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-const API_URL = process.env.REACT_APP_API_URL || "";
+
 function App() {
   //GET THE CURRENT WINDOW SIZE
   const windowSize = useWindowSize();

@@ -5,21 +5,23 @@
   list-style: none;
   padding: 0 1rem;
   margin: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   opacity: 0;
   background-color: white;
 }
 
 .drawer__list--disappear {
-  animation: drawer-disappear 0.5s;
-  opacity: 0;
+  // animation: drawer-disappear 1s;
+  display: none;
 }
 
 .drawer__list--appear {
   animation: drawer-appear 0.5s;
   top: 104.789px;
   opacity: 1;
+  z-index: 1000;
+  display: block;
 }
 
 .drawer__item {
@@ -30,4 +32,8 @@
 
 .drawer__item:first-child {
   border-top: 1px solid black;
+}
+
+.drawer__item:last-child {
+  border-bottom: none;
 }

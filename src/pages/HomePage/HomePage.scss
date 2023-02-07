@@ -4,7 +4,16 @@
 .home-page {
   padding-top: 105px;
   position: relative;
-  height: 455px;
+}
+
+.home-page__intro {
+  height: 350px;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 450px;
+  }
 }
 
 .home-page__content {
@@ -18,7 +27,13 @@
   gap: 1rem;
   text-align: center;
   padding: 1rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  @include tablet {
+    margin-top: 6rem;
+  }
+  @include desktop {
+    margin-top: 8rem;
+  }
 }
 
 .home-page__video {
@@ -26,14 +41,191 @@
   height: 350px;
   width: 100vw;
   position: absolute;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 450px;
+  }
 }
 
 .home-page__heading {
   margin-bottom: 0;
+  color: white;
+}
+
+.home-page__about {
+  padding: 1rem;
+  background-color: rgba(128, 128, 128, 0.131);
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  @include tablet {
+    padding: 1.5rem 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.home-page__about-container {
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-page__about-heading,
+.home-page__projects-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  @include tablet {
+    margin-bottom: 4rem;
+  }
 }
 
 .home-page__text {
-  font-size: 2.3rem;
-  font-family: "Tangerine", sans-serif;
   margin: 1rem 0;
+}
+
+.home-page__about-content {
+  margin-bottom: 1rem;
+  @include tablet {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.home-page__about-flex-item:first-child {
+  @include tablet {
+    width: 45%;
+  }
+}
+
+.home-page__about-flex-item:last-child {
+  @include tablet {
+    width: 45%;
+  }
+}
+
+.home-page__about-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.home-page__about-skill {
+  padding: 0.8rem 1rem;
+  background-color: rgba(128, 128, 128, 0.169);
+  border-radius: 5px;
+}
+
+.home-page__projects {
+  padding: 0 1rem;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  @include tablet {
+    padding: 0 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.home-page__project {
+  margin-bottom: 2.5rem;
+  @include tablet {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 4.3rem;
+  }
+}
+
+.home-page__project:last-child {
+  margin-bottom: 0;
+}
+
+.home-page__project-display-none {
+  display: none;
+}
+
+.home-page__project-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  color: #fff;
+  animation: textclip 2s linear infinite;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  span {
+    animation: letter-flip 3s infinite;
+    display: inline-block;
+  }
+  @include tablet {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.home-page__project-flip {
+  animation: flip-animation 1.3s linear both;
+}
+
+.home-page__project-reverse-flip {
+  animation: reverse-flip-animation 1.3s linear both;
+}
+
+.home-page__project-pic-wrap {
+  background-image: url("../../assets/images//macbook-frame.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    flex-shrink: 0;
+    width: 400px;
+  }
+  @include big-tablet {
+    width: 550px;
+    height: 350px;
+  }
+  @include small-desktop {
+    width: 650px;
+    height: 400px;
+  }
+}
+
+.home-page__project-pic {
+  width: 420px;
+  @include tablet {
+    width: 297px;
+  }
+  @include big-tablet {
+    width: 408px;
+  }
+  @include small-desktop {
+    width: 480px;
+  }
+}
+
+.home-page__project-text {
+  text-align: center;
+  @include tablet {
+    text-align: left;
+    flex-grow: 1;
+  }
 }
