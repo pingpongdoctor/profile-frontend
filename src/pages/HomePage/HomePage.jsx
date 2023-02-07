@@ -173,7 +173,7 @@ export default function HomePage() {
           <h1 className="home-page__about-heading">About me</h1>
           {/* GET TO KNOW ME AND SKILLS */}
           <div className="home-page__about-content">
-            <div className="home-page__about-flex-item">
+            <div className="home-page__about-flex-item" data-aos="slide-right">
               <h2>Get to know me!</h2>
               <p>
                 I am a doctor and blockchain enthusiast who craves to take a
@@ -204,7 +204,7 @@ export default function HomePage() {
                 contact me.
               </p>
             </div>
-            <div className="home-page__about-flex-item">
+            <div className="home-page__about-flex-item" data-aos="slide-left">
               <h2>My Skills</h2>
               <ul className="home-page__about-skills">
                 {skillArr.map((skill) => (
@@ -227,7 +227,7 @@ export default function HomePage() {
           projectsArr.map((project, index) => (
             <div key={index} className={`home-page__project`}>
               {/* FLEX ITEM */}
-              <div className="home-page__project-pic-wrap">
+              <div data-aos="flip-left" className="home-page__project-pic-wrap">
                 <img
                   className="home-page__project-pic"
                   src={project.image_link}
@@ -236,7 +236,7 @@ export default function HomePage() {
                 />
               </div>
               {/* FLEX ITEM */}
-              <div className="home-page__project-text">
+              <div data-aos="flip-right" className="home-page__project-text">
                 <h2>{project.name}</h2>
                 {/* SHOW GENERAL INFO */}
                 <div className="home-page__general-infor">
