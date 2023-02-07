@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .home-page {
-  padding-top: 105px;
+  padding-top: 121px;
   position: relative;
 }
 
@@ -47,11 +47,6 @@
   @include desktop {
     height: 450px;
   }
-}
-
-.home-page__heading {
-  margin-bottom: 0;
-  color: white;
 }
 
 .home-page__about {
@@ -121,12 +116,28 @@
   padding: 0.8rem 1rem;
   background-color: rgba(128, 128, 128, 0.169);
   border-radius: 5px;
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+  }
+}
+
+.home-page__about-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgba(5, 5, 136, 0.739);
+  transition: transform 1s;
+  &:hover {
+    color: rgb(5, 5, 136);
+    border-bottom: 2px rgb(5, 5, 136) solid;
+  }
 }
 
 .home-page__projects {
   padding: 0 1rem;
   padding-top: 2rem;
   padding-bottom: 3.5rem;
+  background-color: rgba(128, 128, 128, 0.067);
   @include tablet {
     padding: 0 2.5rem;
     padding-top: 4rem;

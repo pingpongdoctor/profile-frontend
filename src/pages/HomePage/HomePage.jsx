@@ -4,6 +4,7 @@ import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import capstoneGif from "../../assets/images/capstone.gif";
 import brainflixGif from "../../assets/images/BrainFlix.gif";
 import bandsiteGif from "../../assets/images/BandSite.gif";
+import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect } from "react";
 import { useWindowSize } from "../../Utils/utils";
 import { TypeAnimation } from "react-type-animation";
@@ -13,10 +14,9 @@ import "aos/dist/aos.css";
 AOS.init();
 const API_URL = process.env.REACT_APP_API_URL || "";
 
-export default function HomePage() {
+export default function HomePage({ homeEle, aboutEle, projectEle }) {
   //GIF FILE LINKS ARRAY
   const gifArr = [capstoneGif, brainflixGif, bandsiteGif];
-
   //DEFINE SKILLS ARRAY
   const skillArr = [
     "HTML",
@@ -43,14 +43,29 @@ export default function HomePage() {
   const windowSize = useWindowSize();
   const currentWindowWidth = windowSize.width;
   useEffect(() => {
-    if (currentWindowWidth > 479 && currentWindowWidth < 768) {
+    if (currentWindowWidth > 602 && currentWindowWidth < 768) {
       setPicWidth("");
     }
-    if (currentWindowWidth < 479) {
-      setPicWidth(currentWindowWidth - 120);
+    if (currentWindowWidth < 602) {
+      setPicWidth(currentWindowWidth - 190);
     }
-    if (currentWindowWidth < 400) {
-      setPicWidth(currentWindowWidth - 110);
+    if (currentWindowWidth < 550) {
+      setPicWidth(currentWindowWidth - 170);
+    }
+    if (currentWindowWidth < 515) {
+      setPicWidth(currentWindowWidth - 160);
+    }
+    if (currentWindowWidth < 470) {
+      setPicWidth(currentWindowWidth - 150);
+    }
+    if (currentWindowWidth < 430) {
+      setPicWidth(currentWindowWidth - 140);
+    }
+    if (currentWindowWidth < 380) {
+      setPicWidth(currentWindowWidth - 130);
+    }
+    if (currentWindowWidth < 350) {
+      setPicWidth(currentWindowWidth - 120);
     }
   }, [currentWindowWidth]);
 
@@ -120,6 +135,7 @@ export default function HomePage() {
   //USE EFFECT TO GET ALL PROJECTS WHEN THE PAGE IS LOADED
   useEffect(() => {
     getAllProjects();
+    // eslint-disable-next-line
   }, []);
 
   //FUNCTION TO FORMAT TECH STACK ARRAYS
@@ -130,7 +146,7 @@ export default function HomePage() {
     return finalString;
   };
   return (
-    <div className="home-page">
+    <div ref={homeEle} className="home-page">
       {/* INTRODUCTION */}
       <div className="home-page__intro">
         <video
@@ -155,12 +171,14 @@ export default function HomePage() {
             repeat={Infinity}
             style={{ marginBottom: "0", color: "white", fontSize: "2rem" }}
           />
-          {/* <h1 className="home-page__heading">Hi! I am Simon Tran</h1> */}
           <p className="home-page__text">
             I am a Full-stack developer who codes and fixes bugs as same as a
             doctor treats patients dedicatedly.
           </p>
           <ButtonComponent
+            onClickHandler={() => {
+              handleScrollToElement(projectEle);
+            }}
             btnName="projects"
             btnClassName="btn"
             btnContent="Projects"
@@ -168,7 +186,7 @@ export default function HomePage() {
         </div>
       </div>
       {/* ABOUT */}
-      <div className="home-page__about">
+      <div ref={aboutEle} className="home-page__about">
         <div className="home-page__about-container">
           <h1 className="home-page__about-heading">About me</h1>
           {/* GET TO KNOW ME AND SKILLS */}
@@ -188,8 +206,10 @@ export default function HomePage() {
                 Web Development. You can connect and get to know more about me
                 on my {""}
                 <a
+                  className="home-page__about-link"
                   href="https://www.linkedin.com/in/simon-tran1501/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Linkedin
                 </a>
@@ -221,8 +241,8 @@ export default function HomePage() {
         </div>
       </div>
       {/* PROJECTS */}
-      <div className="home-page__projects">
-        <h1 className="home-page__projects-heading">Projects</h1>
+      <div ref={projectEle} className="home-page__projects">
+        <h1 className="home-page__projects-heading">My Projects</h1>
         {projectsArr.length > 0 &&
           projectsArr.map((project, index) => (
             <div key={index} className={`home-page__project`}>
@@ -231,7 +251,7 @@ export default function HomePage() {
                 <img
                   className="home-page__project-pic"
                   src={project.image_link}
-                  alt="gif-image"
+                  alt="gif-file"
                   style={{ width: picWidth }}
                 />
               </div>

@@ -2,10 +2,17 @@ import "./HeaderComponent.scss";
 import menu from "../../assets/icons/menu.png";
 import cross from "../../assets/icons/cross.png";
 import AvatarComponent from "../AvatarComponent/AvatarComponent";
+import { handleScrollToElement } from "../../Utils/utils";
 import { useWindowSize } from "../../Utils/utils";
 import { useEffect, useState } from "react";
 
-export default function HeaderComponent({ handleOnClickMenuIcon, openMenu }) {
+export default function HeaderComponent({
+  homeEle,
+  aboutEle,
+  projectEle,
+  handleOnClickMenuIcon,
+  openMenu,
+}) {
   //STATES FOR THE PROFILE IMAGE SIZE
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
@@ -22,6 +29,19 @@ export default function HeaderComponent({ handleOnClickMenuIcon, openMenu }) {
       setHeight(50);
     }
   });
+  //FUNCTION TO HANDLE SCROLLING TO ELEMETNS WHEN THEY ARE CLICKED
+  const handleOnClickToSrollTo = function (event) {
+    const id = event.target.id;
+    if (id === "home") {
+      handleScrollToElement(homeEle);
+    }
+    if (id === "about") {
+      handleScrollToElement(aboutEle);
+    }
+    if (id === "project") {
+      handleScrollToElement(projectEle);
+    }
+  };
   return (
     <div className="site-header">
       <div className="site-header__container">
@@ -46,10 +66,34 @@ export default function HeaderComponent({ handleOnClickMenuIcon, openMenu }) {
           />
         )}
         <ul className="site-header__list">
-          <li className="site-header__text">Home</li>
-          <li className="site-header__text">About</li>
-          <li className="site-header__text">Projects</li>
-          <li className="site-header__text">Contact</li>
+          <li
+            onClick={handleOnClickToSrollTo}
+            id="home"
+            className="site-header__text"
+          >
+            Home
+          </li>
+          <li
+            onClick={handleOnClickToSrollTo}
+            id="about"
+            className="site-header__text"
+          >
+            About
+          </li>
+          <li
+            onClick={handleOnClickToSrollTo}
+            id="project"
+            className="site-header__text"
+          >
+            Projects
+          </li>
+          <li
+            id="contact"
+            onClick={handleOnClickToSrollTo}
+            className="site-header__text"
+          >
+            Contact
+          </li>
         </ul>
       </div>
     </div>

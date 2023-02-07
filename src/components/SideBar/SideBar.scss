@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.side-bar {
+  position: fixed;
+  z-index: 10000;
+  top: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  width: 55px;
+  height: 180px;
+  border-radius: 10px;
+}

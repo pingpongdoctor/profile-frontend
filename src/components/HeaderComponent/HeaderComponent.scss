@@ -10,7 +10,7 @@
   background-color: white;
   color: #16213e;
   @include tablet {
-    padding: 1rem 2.5rem;
+    padding: 1.5rem 2.5rem;
   }
 }
 
@@ -55,7 +55,11 @@
 
 .site-header__text {
   font-size: 1.3rem;
+  cursor: pointer;
   @include tablet {
+    &:hover {
+      border-bottom: 2px $text-color solid;
+    }
     font-size: 1.625rem;
     font-family: "Fredericka the Great", sans-serif;
     animation: text-shaking infinite 0.5s;

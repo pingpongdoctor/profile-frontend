@@ -17,8 +17,15 @@ export default function FooterComponent() {
         <div className="site-footer__big-text">
           <p className="site-footer__text site-footer__main-text">Social</p>
           <div className="site-footer__icons">
-            <LinkedinIcon linkedinIconClassname="linkedin-icon" />
-            <GithubIcon githubIconClassname="github-icon__container" />
+            <a
+              href="https://www.linkedin.com/in/simon-tran1501/"
+              target="_blanket"
+            >
+              <LinkedinIcon linkedinIconClassname="linkedin-icon" />
+            </a>
+            <a href="https://github.com/pingpongdoctor" target="_blanket">
+              <GithubIcon githubIconClassname="github-icon__container" />
+            </a>
           </div>
         </div>
       </div>

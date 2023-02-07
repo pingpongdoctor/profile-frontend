@@ -5,11 +5,20 @@
   background-color: white;
   width: fit-content;
   border-radius: 50%;
-  height: 24px;
+  height: 30px;
+}
+
+.github-icon--side-bar {
+  height: 39px;
+  width: auto;
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+  }
 }
 
 .github-icon__container {
-  width: 27px;
+  width: 32px;
   height: auto;
   object-position: 0px -2px;
 }
