@@ -33,7 +33,7 @@ function App() {
       setDrawerDisplay("");
     }
   }, [windowSize]);
-  //USE USEREF
+  //USE USE REF
   const homeEle = useRef();
   const aboutEle = useRef();
   const projectEle = useRef();
@@ -55,8 +55,20 @@ function App() {
         />
         <SideBar />
         <Routes>
+          {/* HOMEPAGE ROUTE */}
           <Route
             path="/"
+            element={
+              <HomePage
+                homeEle={homeEle}
+                aboutEle={aboutEle}
+                projectEle={projectEle}
+              />
+            }
+          />
+          {/* SUBMITTED ROUTE */}
+          <Route
+            path="/submitted"
             element={
               <HomePage
                 homeEle={homeEle}

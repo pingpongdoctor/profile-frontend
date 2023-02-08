@@ -69,10 +69,12 @@
 }
 
 .home-page__about-heading,
-.home-page__projects-heading {
+.home-page__projects-heading,
+.home-page__contact-heading {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1.4rem;
+  font-weight: bold;
   @include tablet {
     margin-bottom: 4rem;
   }
@@ -142,6 +144,13 @@
     padding: 0 2.5rem;
     padding-top: 4rem;
     padding-bottom: 6rem;
+  }
+}
+
+.home-page__projects-container {
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
@@ -239,4 +248,123 @@
     text-align: left;
     flex-grow: 1;
   }
+}
+
+.home-page__contact {
+  @extend .home-page__projects;
+  background-color: rgba(128, 128, 128, 0.131);
+}
+
+.home-page__contact-container {
+  @include tablet {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-page__contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
+  @include tablet {
+    width: 60vw;
+    padding: 2rem;
+  }
+  @include desktop {
+    padding: 2.5rem;
+    max-width: 768px;
+  }
+}
+
+.home-page__contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-page__contact-label {
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.home-page__contact-input-box,
+.home-page__contact-textarea {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Cardo", sans-serif;
+  padding: 0.5rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+.home-page__contact-input-box {
+  height: 35px;
+  border: 1px solid rgba(128, 128, 128, 0.353);
+  @include tablet {
+    height: 40px;
+  }
+  &:focus {
+    border: 1px solid rgba(128, 128, 128, 0.705);
+  }
+}
+
+.home-page__contact-textarea {
+  resize: none;
+  height: 200px;
+  border: 1px solid rgba(128, 128, 128, 0.353);
+  &:focus {
+    border: 1px solid rgba(128, 128, 128, 0.705);
+  }
+  @include tablet {
+    height: 250px;
+  }
+  @include desktop {
+    height: 300px;
+  }
+}
+
+.submit-box {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-box__box {
+  width: fit-content;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: ivory;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.submit-box__text {
+  margin: 0;
+  font-weight: bold;
+}
+
+.submit-box__video {
+  @extend .home-page__video;
+  width: 100vw;
+  height: 100vh;
 }

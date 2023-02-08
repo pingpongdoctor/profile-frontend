@@ -5,6 +5,7 @@ import AvatarComponent from "../AvatarComponent/AvatarComponent";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useWindowSize } from "../../Utils/utils";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function HeaderComponent({
   homeEle,
@@ -42,60 +43,65 @@ export default function HeaderComponent({
       handleScrollToElement(projectEle);
     }
   };
-  return (
-    <div className="site-header">
-      <div className="site-header__container">
-        <div>
-          <AvatarComponent width={width} height={height} />
+  //GET THE CURRENT PATH
+  const currentPath = useLocation().pathname;
+
+  if (currentPath !== "/submitted") {
+    return (
+      <div className="site-header">
+        <div className="site-header__container">
+          <div>
+            <AvatarComponent width={width} height={height} />
+          </div>
+          <p className="site-header__name">Simon Tran</p>
+          {!openMenu && (
+            <img
+              onClick={handleOnClickMenuIcon}
+              className="site-header__icon"
+              src={menu}
+              alt="menu"
+            />
+          )}
+          {openMenu && (
+            <img
+              onClick={handleOnClickMenuIcon}
+              className="site-header__icon"
+              src={cross}
+              alt="cross"
+            />
+          )}
+          <ul className="site-header__list">
+            <li
+              onClick={handleOnClickToSrollTo}
+              id="home"
+              className="site-header__text"
+            >
+              Home
+            </li>
+            <li
+              onClick={handleOnClickToSrollTo}
+              id="about"
+              className="site-header__text"
+            >
+              About
+            </li>
+            <li
+              onClick={handleOnClickToSrollTo}
+              id="project"
+              className="site-header__text"
+            >
+              Projects
+            </li>
+            <li
+              id="contact"
+              onClick={handleOnClickToSrollTo}
+              className="site-header__text"
+            >
+              Contact
+            </li>
+          </ul>
         </div>
-        <p className="site-header__name">Simon Tran</p>
-        {!openMenu && (
-          <img
-            onClick={handleOnClickMenuIcon}
-            className="site-header__icon"
-            src={menu}
-            alt="menu"
-          />
-        )}
-        {openMenu && (
-          <img
-            onClick={handleOnClickMenuIcon}
-            className="site-header__icon"
-            src={cross}
-            alt="cross"
-          />
-        )}
-        <ul className="site-header__list">
-          <li
-            onClick={handleOnClickToSrollTo}
-            id="home"
-            className="site-header__text"
-          >
-            Home
-          </li>
-          <li
-            onClick={handleOnClickToSrollTo}
-            id="about"
-            className="site-header__text"
-          >
-            About
-          </li>
-          <li
-            onClick={handleOnClickToSrollTo}
-            id="project"
-            className="site-header__text"
-          >
-            Projects
-          </li>
-          <li
-            id="contact"
-            onClick={handleOnClickToSrollTo}
-            className="site-header__text"
-          >
-            Contact
-          </li>
-        </ul>
       </div>
-    </div>
-  );
+    );
+  }
 }

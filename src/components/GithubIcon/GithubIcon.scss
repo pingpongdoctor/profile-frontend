@@ -9,8 +9,11 @@
 }
 
 .github-icon--side-bar {
-  height: 39px;
+  height: 33px;
   width: auto;
+  @include tablet {
+    width: 39px;
+  }
   &:hover {
     transition: transform 1s;
     transform: scale(1.2);

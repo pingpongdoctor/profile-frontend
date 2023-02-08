@@ -11,7 +11,20 @@
   align-items: center;
   gap: 1rem;
   background-color: white;
-  width: 55px;
-  height: 180px;
   border-radius: 10px;
+  width: 45px;
+  height: 160px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  @include tablet {
+    padding-top: 0.8rem;
+    width: 55px;
+    height: 180px;
+    opacity: 0.8;
+  }
+  @include desktop {
+    opacity: 1;
+  }
 }
