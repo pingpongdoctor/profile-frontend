@@ -4,6 +4,7 @@ import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import capstoneGif from "../../assets/images/capstone.gif";
 import brainflixGif from "../../assets/images/BrainFlix.gif";
 import bandsiteGif from "../../assets/images/BandSite.gif";
+import profilePic from "../../assets/images/profile-pic.png";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
 import { useWindowSize } from "../../Utils/utils";
@@ -21,9 +22,14 @@ const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } =
   process.env;
 const API_URL = process.env.REACT_APP_API_URL || "";
 
-export default function HomePage({ homeEle, aboutEle, projectEle }) {
+export default function HomePage({
+  homeEle,
+  aboutEle,
+  projectEle,
+  contactEle,
+}) {
   //GIF FILE LINKS ARRAY
-  const gifArr = [capstoneGif, brainflixGif, bandsiteGif];
+  const gifArr = [capstoneGif, brainflixGif, bandsiteGif, profilePic];
   //DEFINE SKILLS ARRAY
   const skillArr = [
     "HTML",
@@ -457,7 +463,7 @@ export default function HomePage({ homeEle, aboutEle, projectEle }) {
           </div>
         </div>
         {/* CONTACT */}
-        <div className="home-page__contact">
+        <div ref={contactEle} className="home-page__contact">
           <div className="home-page__contact-container">
             <h1 className="home-page__contact-heading">Contact</h1>
             <form

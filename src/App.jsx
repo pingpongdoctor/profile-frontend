@@ -37,6 +37,7 @@ function App() {
   const homeEle = useRef();
   const aboutEle = useRef();
   const projectEle = useRef();
+  const contactEle = useRef();
   return (
     <BrowserRouter>
       <div className="App">
@@ -46,11 +47,13 @@ function App() {
           homeEle={homeEle}
           aboutEle={aboutEle}
           projectEle={projectEle}
+          contactEle={contactEle}
         />
         <DrawerComponent
           homeEle={homeEle}
           aboutEle={aboutEle}
           projectEle={projectEle}
+          contactEle={contactEle}
           drawerDisplay={drawerDisplay}
         />
         <SideBar />
@@ -63,6 +66,7 @@ function App() {
                 homeEle={homeEle}
                 aboutEle={aboutEle}
                 projectEle={projectEle}
+                contactEle={contactEle}
               />
             }
           />
@@ -74,6 +78,7 @@ function App() {
                 homeEle={homeEle}
                 aboutEle={aboutEle}
                 projectEle={projectEle}
+                contactEle={contactEle}
               />
             }
           />

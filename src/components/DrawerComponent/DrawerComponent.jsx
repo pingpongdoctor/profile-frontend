@@ -6,6 +6,7 @@ export default function DrawerComponent({
   homeEle,
   projectEle,
   aboutEle,
+  contactEle,
 }) {
   //FUNCTION TO HANDLE SCROLLING TO ELEMETNS WHEN THEY ARE CLICKED
   const handleOnClickToSrollTo = function (event) {
@@ -18,6 +19,9 @@ export default function DrawerComponent({
     }
     if (id === "drawer-project") {
       handleScrollToElement(projectEle);
+    }
+    if (id === "drawer-contact") {
+      handleScrollToElement(contactEle);
     }
   };
   return (

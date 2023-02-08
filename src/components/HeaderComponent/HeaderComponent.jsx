@@ -11,6 +11,7 @@ export default function HeaderComponent({
   homeEle,
   aboutEle,
   projectEle,
+  contactEle,
   handleOnClickMenuIcon,
   openMenu,
 }) {
@@ -41,6 +42,9 @@ export default function HeaderComponent({
     }
     if (id === "project") {
       handleScrollToElement(projectEle);
+    }
+    if (id === "contact") {
+      handleScrollToElement(contactEle);
     }
   };
   //GET THE CURRENT PATH
