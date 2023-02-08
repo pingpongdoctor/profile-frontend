@@ -8,6 +8,8 @@
 
 Simon Profile project is a MERN application that helps you know more about me, take a look at my projects and contact me easily. All pages are responsive in different breakpoints such as mobile, tablet and desktop breakpoints.
 
+![](https://github.com/pingpongdoctor/profile-frontend/blob/dev/profile-project.gif)
+
 ## Key Features
 
 - Help know more about me and my web development skills.
