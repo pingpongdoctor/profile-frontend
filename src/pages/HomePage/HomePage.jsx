@@ -467,6 +467,7 @@ export default function HomePage({
           <div className="home-page__contact-container">
             <h1 className="home-page__contact-heading">Contact</h1>
             <form
+              data-aos="slide-left"
               onSubmit={handleOnSubmitInfor}
               ref={form}
               className="home-page__contact-form"
