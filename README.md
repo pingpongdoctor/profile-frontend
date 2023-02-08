@@ -1,5 +1,3 @@
-![](https://github.com/pingpongdoctor/profile-frontend/blob/main/src/assets/images/profile-pic.png)
-
 # Build Your Diet
 
 [Deployment link](https://simonprofile.netlify.app)
