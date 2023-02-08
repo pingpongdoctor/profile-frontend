@@ -19,3 +19,7 @@ export function useWindowSize() {
   }, []);
   return windowSize;
 }
+//FUNCTION TO SCROLL TO A CERTAIN ELEMENT
+export function handleScrollToElement(value) {
+  value.current.scrollIntoView({ behavior: "smooth" });
+}

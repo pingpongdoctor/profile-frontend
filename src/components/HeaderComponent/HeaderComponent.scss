@@ -6,10 +6,12 @@
   position: fixed;
   height: 105px;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
   background-color: white;
+  color: #16213e;
   @include tablet {
-    padding: 1rem 2.5rem;
+    padding: 1.5rem 2.5rem;
+    height: 121px;
   }
 }
 
@@ -27,7 +29,12 @@
   margin-left: 1.5rem;
   font-weight: bold;
   font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0;
   @include tablet {
+    font-size: 1.625rem;
+  }
+  @include desktop {
     margin-left: 2.5rem;
   }
 }
@@ -40,13 +47,21 @@
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 2rem;
+  }
+  @include desktop {
     gap: 3rem;
   }
 }
 
 .site-header__text {
+  font-size: 1.3rem;
+  cursor: pointer;
   @include tablet {
-    font-size: 1.3rem;
+    &:hover {
+      border-bottom: 2px $text-color solid;
+    }
+    font-size: 1.625rem;
     font-family: "Fredericka the Great", sans-serif;
     animation: text-shaking infinite 0.5s;
   }

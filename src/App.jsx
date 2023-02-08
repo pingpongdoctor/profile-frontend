@@ -1,13 +1,13 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import DetailedProject from "./pages/DetailedProjectPage/DetailedProject";
+import { useState, useEffect, useRef } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
 import { useWindowSize } from "./Utils/utils";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-const API_URL = process.env.REACT_APP_API_URL || "";
+import SideBar from "./components/SideBar/SideBar";
+
 function App() {
   //GET THE CURRENT WINDOW SIZE
   const windowSize = useWindowSize();
@@ -33,18 +33,50 @@ function App() {
       setDrawerDisplay("");
     }
   }, [windowSize]);
-
+  //USE USE REF
+  const homeEle = useRef();
+  const aboutEle = useRef();
+  const projectEle = useRef();
   return (
     <BrowserRouter>
       <div className="App">
         <HeaderComponent
           handleOnClickMenuIcon={handleOnClickMenuIcon}
           openMenu={openMenu}
+          homeEle={homeEle}
+          aboutEle={aboutEle}
+          projectEle={projectEle}
         />
-        <DrawerComponent drawerDisplay={drawerDisplay} />
+        <DrawerComponent
+          homeEle={homeEle}
+          aboutEle={aboutEle}
+          projectEle={projectEle}
+          drawerDisplay={drawerDisplay}
+        />
+        <SideBar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/detailed-project/:id" element={<DetailedProject />} />
+          {/* HOMEPAGE ROUTE */}
+          <Route
+            path="/"
+            element={
+              <HomePage
+                homeEle={homeEle}
+                aboutEle={aboutEle}
+                projectEle={projectEle}
+              />
+            }
+          />
+          {/* SUBMITTED ROUTE */}
+          <Route
+            path="/submitted"
+            element={
+              <HomePage
+                homeEle={homeEle}
+                aboutEle={aboutEle}
+                projectEle={projectEle}
+              />
+            }
+          />
         </Routes>
         <FooterComponent />
       </div>
