@@ -1,4 +1,4 @@
-![Logo](https://res.cloudinary.com/dtdzvyf4s/image/upload/v1671582202/build-your-diets-low-resolution-logo-white-on-black-background_ouha7g.png)
+![](https://github.com/pingpongdoctor/profile-frontend/blob/main/src/assets/images/profile-pic.png)
 
 # Build Your Diet
 
@@ -7,8 +7,6 @@
 [Frontend](https://github.com/pingpongdoctor/profile-frontend/tree/main) | [Backend](https://github.com/pingpongdoctor/profile-backend/tree/main)
 
 Simon Profile project is a MERN application that helps you know more about me, take a look at my projects and contact me easily. All pages are responsive in different breakpoints such as mobile, tablet and desktop breakpoints.
-
-![](https://github.com/pingpongdoctor/profile-frontend/blob/main/src/assets/images/profile-pic.png)
 
 ## Key Features
 
