@@ -1,0 +1,370 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.home-page {
+  padding-top: 121px;
+  position: relative;
+}
+
+.home-page__intro {
+  height: 350px;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 450px;
+  }
+}
+
+.home-page__content {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  @include tablet {
+    margin-top: 6rem;
+  }
+  @include desktop {
+    margin-top: 8rem;
+  }
+}
+
+.home-page__video {
+  object-fit: cover;
+  height: 350px;
+  width: 100vw;
+  position: absolute;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 450px;
+  }
+}
+
+.home-page__about {
+  padding: 1rem;
+  background-color: rgba(128, 128, 128, 0.131);
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  @include tablet {
+    padding: 1.5rem 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.home-page__about-container {
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-page__about-heading,
+.home-page__projects-heading,
+.home-page__contact-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  font-weight: bold;
+  @include tablet {
+    margin-bottom: 4rem;
+  }
+}
+
+.home-page__text {
+  margin: 1rem 0;
+}
+
+.home-page__about-content {
+  margin-bottom: 1rem;
+  @include tablet {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.home-page__about-flex-item:first-child {
+  @include tablet {
+    width: 45%;
+  }
+}
+
+.home-page__about-flex-item:last-child {
+  @include tablet {
+    width: 45%;
+  }
+}
+
+.home-page__about-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.home-page__about-skill {
+  padding: 0.8rem 1rem;
+  background-color: rgba(128, 128, 128, 0.169);
+  border-radius: 5px;
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+  }
+}
+
+.home-page__about-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgba(5, 5, 136, 0.739);
+  transition: transform 1s;
+  &:hover {
+    color: rgb(5, 5, 136);
+    border-bottom: 2px rgb(5, 5, 136) solid;
+  }
+}
+
+.home-page__projects {
+  padding: 0 1rem;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  background-color: rgba(128, 128, 128, 0.067);
+  @include tablet {
+    padding: 0 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.home-page__projects-container {
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-page__project {
+  margin-bottom: 2.5rem;
+  @include tablet {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 4.3rem;
+  }
+}
+
+.home-page__project:last-child {
+  margin-bottom: 0;
+}
+
+.home-page__project-display-none {
+  display: none;
+}
+
+.home-page__project-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  color: #fff;
+  animation: textclip 2s linear infinite;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  span {
+    animation: letter-flip 3s infinite;
+    display: inline-block;
+  }
+  @include tablet {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.home-page__project-flip {
+  animation: flip-animation 1.3s linear both;
+}
+
+.home-page__project-reverse-flip {
+  animation: reverse-flip-animation 1.3s linear both;
+}
+
+.home-page__project-pic-wrap {
+  background-image: url("../../assets/images//macbook-frame.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    flex-shrink: 0;
+    width: 400px;
+  }
+  @include big-tablet {
+    width: 550px;
+    height: 350px;
+  }
+  @include small-desktop {
+    width: 650px;
+    height: 400px;
+  }
+}
+
+.home-page__project-pic {
+  width: 420px;
+  @include tablet {
+    width: 297px;
+  }
+  @include big-tablet {
+    width: 408px;
+  }
+  @include small-desktop {
+    width: 480px;
+  }
+}
+
+.home-page__project-text {
+  text-align: center;
+  @include tablet {
+    text-align: left;
+    flex-grow: 1;
+  }
+}
+
+.home-page__contact {
+  @extend .home-page__projects;
+  background-color: rgba(128, 128, 128, 0.131);
+}
+
+.home-page__contact-container {
+  @include tablet {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-page__contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
+  @include tablet {
+    width: 60vw;
+    padding: 2rem;
+  }
+  @include desktop {
+    padding: 2.5rem;
+    max-width: 768px;
+  }
+}
+
+.home-page__contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-page__contact-label {
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.home-page__contact-input-box,
+.home-page__contact-textarea {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Cardo", sans-serif;
+  padding: 0.5rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+.home-page__contact-input-box {
+  height: 35px;
+  border: 1px solid rgba(128, 128, 128, 0.353);
+  @include tablet {
+    height: 40px;
+  }
+  &:focus {
+    border: 1px solid rgba(128, 128, 128, 0.705);
+  }
+}
+
+.home-page__contact-textarea {
+  resize: none;
+  height: 200px;
+  border: 1px solid rgba(128, 128, 128, 0.353);
+  &:focus {
+    border: 1px solid rgba(128, 128, 128, 0.705);
+  }
+  @include tablet {
+    height: 250px;
+  }
+  @include desktop {
+    height: 300px;
+  }
+}
+
+.submit-box {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-box__box {
+  width: fit-content;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: ivory;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.submit-box__text {
+  margin: 0;
+  font-weight: bold;
+}
+
+.submit-box__video {
+  @extend .home-page__video;
+  width: 100vw;
+  height: 100vh;
+}

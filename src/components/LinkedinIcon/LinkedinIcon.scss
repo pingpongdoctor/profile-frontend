@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.linkedin-icon {
+  background-color: white;
+  width: 32px;
+  height: auto;
+}
+
+.linkedin-icon--side-bar {
+  width: 32px;
+  height: auto;
+  border-radius: 5px;
+  @include tablet {
+    width: 38px;
+  }
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+  }
+}

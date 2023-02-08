@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.mail-icon--side-bar {
+  width: 32px;
+  height: auto;
+  margin-top: 0.9rem;
+  @include tablet {
+    width: 38px;
+  }
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+  }
+}

@@ -1,0 +1,62 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.site-footer {
+  padding: 1rem;
+  background-color: black;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+.site-footer__container {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.site-footer__big-text:first-child {
+  @include tablet {
+    width: 60%;
+  }
+  @include desktop {
+    width: 50%;
+  }
+}
+
+.site-footer__big-text:last-child {
+  @include tablet {
+    width: 20%;
+    text-align: center;
+  }
+}
+
+.site-footer__text {
+  color: white;
+}
+
+.site-footer__description {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__main-text {
+  font-size: 1.625rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.site-footer__icons {
+  display: flex;
+  gap: 1rem;
+  margin-left: -0.2rem;
+  @include tablet {
+    justify-content: center;
+  }
+}
