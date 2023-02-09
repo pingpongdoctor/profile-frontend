@@ -219,7 +219,7 @@ export default function HomePage({
       setShowSubmit(false);
     }
   }, [currentLocation]);
-  console.log(REACT_APP_PUBLIC_KEY);
+
   //FUNCTION TO HANDLE SUBMITTING
   const handleOnSubmitInfor = function (event) {
     event.preventDefault();
