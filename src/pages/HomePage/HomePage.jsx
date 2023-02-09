@@ -132,7 +132,6 @@ export default function HomePage({
     axios
       .get(`${API_URL}/projects`)
       .then((response) => {
-        console.log(response.data);
         const projectsData = response.data;
         for (let i = 0; i < projectsData.length; i++) {
           projectsData[i].image_link = gifArr[i];
@@ -276,7 +275,6 @@ export default function HomePage({
       setCountdown(4);
     }
   });
-
   if (!showSubmit) {
     return (
       <div ref={homeEle} className="home-page">
@@ -305,9 +303,18 @@ export default function HomePage({
               style={{ marginBottom: "0", color: "white", fontSize: "2rem" }}
             />
             <p className="home-page__text">
-              I am a Full-stack developer who codes and fixes bugs as same as a
-              doctor treats patients dedicatedly.
+              I am a Full-Stack Web Developer who approaches coding and bug
+              fixing with the same dedication and care as a doctor treats their
+              patients. I strive to provide the highest quality solutions, and
+              take pride in my work.
             </p>
+            {/* {currentWindowWidth < 500 && (
+              <p className="home-page__text">
+                I am a Full-Stack Web Developer who provides the same dedication
+                and care as a doctor. I take pride in my work and aim for
+                excellence.
+              </p>
+            )} */}
             <ButtonComponent
               onClickHandler={() => {
                 handleScrollToElement(projectEle);
@@ -330,18 +337,16 @@ export default function HomePage({
               >
                 <h2>Get to know me!</h2>
                 <p>
-                  I am a doctor and blockchain enthusiast who craves to take a
-                  career metamorphosis into Web Development and loves building
-                  full-stack single-page applications. I always find ways to
-                  refine and make my codes more dynamic. Besides from that,
-                  knowing the importance of user experience in website building,
-                  I am also tempted to improve the usability level of my
-                  websites.
+                  I am a doctor and blockchain enthusiast who is passionate
+                  about transitioning into web development and loves creating
+                  full-stack single-page applications. I am constantly striving
+                  to refine and make my codes more dynamic, with a focus on
+                  improving the user experience of my websites.
                 </p>
                 <p>
-                  There are a lot of things to learn and share in the huge land
-                  of Web Development. You can connect and get to know more about
-                  me on my {""}
+                  There is a wealth of knowledge to be gained and shared in the
+                  expansive world of Web Development. If you would like to learn
+                  more about me, please connect with me on my {""}
                   <a
                     className="home-page__about-link"
                     href="https://www.linkedin.com/in/simon-tran1501/"
@@ -353,19 +358,20 @@ export default function HomePage({
                   .
                 </p>
                 <p>
-                  I am into discussing about Web Development and developing my
-                  Developer Network so do not postpone to connect with me. In
-                  addition, I am now open to any job opportunities where I can
-                  contribute, grow and learn. If you have a good opportunity
-                  that matches my skills and my experience, please do not
-                  hesitate to contact me.
+                  I am very enthusiastic about discussing web development topics
+                  and building my network of developers. Additionally, I am now
+                  open to any job opportunities where I can contribute, grow,
+                  and learn. If you have a remarkable opportunity that suits my
+                  skills and experience, please do not hesitate to contact me.
                 </p>
               </div>
               <div className="home-page__about-flex-item" data-aos="slide-left">
                 <h2>My Skills</h2>
                 <ul className="home-page__about-skills">
-                  {skillArr.map((skill) => (
-                    <li className="home-page__about-skill">{skill}</li>
+                  {skillArr.map((skill, index) => (
+                    <li key={index} className="home-page__about-skill">
+                      {skill}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -543,17 +549,17 @@ export default function HomePage({
     );
   } else {
     return (
-      <div className="submit-box">
+      <div className="home-page__submit">
         <video
-          className="submit-box__video"
+          className="home-page__submit-video"
           src={videoBackground}
           muted
           loop
           autoPlay
         ></video>
-        <div className="submit-box__box">
-          <p className="submit-box__text">Thank you for submitting</p>
-          <p className="submit-box__text">
+        <div className="home-page__submit-box">
+          <p className="home-page__submit-text">Thank you for submitting</p>
+          <p className="home-page__submit-text">
             You will be back to the main page in {countdown} seconds
           </p>
           <Snackbar open={snackbarSuccessOpen}>

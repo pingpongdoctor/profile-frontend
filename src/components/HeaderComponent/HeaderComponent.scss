@@ -13,64 +13,64 @@
     padding: 1.5rem 2.5rem;
     height: 121px;
   }
-}
 
-.site-header__container {
-  display: flex;
-  align-items: center;
-  @include desktop {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-.site-header__name {
-  margin-right: auto;
-  margin-left: 1.5rem;
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  @include tablet {
-    font-size: 1.625rem;
-  }
-  @include desktop {
-    margin-left: 2.5rem;
-  }
-}
-
-.site-header__list {
-  display: none;
-  @include tablet {
-    display: block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  &__container {
     display: flex;
-    gap: 2rem;
-  }
-  @include desktop {
-    gap: 3rem;
-  }
-}
-
-.site-header__text {
-  font-size: 1.3rem;
-  cursor: pointer;
-  @include tablet {
-    &:hover {
-      border-bottom: 2px $text-color solid;
+    align-items: center;
+    @include desktop {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    font-size: 1.625rem;
-    font-family: "Fredericka the Great", sans-serif;
-    animation: text-shaking infinite 0.5s;
   }
-}
 
-.site-header__icon {
-  width: 25px;
-  height: 25px;
-  @include tablet {
+  &__name {
+    margin-right: auto;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include tablet {
+      font-size: 1.625rem;
+    }
+    @include desktop {
+      margin-left: 2.5rem;
+    }
+  }
+
+  &__list {
     display: none;
+    @include tablet {
+      display: block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2rem;
+    }
+    @include desktop {
+      gap: 3rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    cursor: pointer;
+    @include tablet {
+      &:hover {
+        border-bottom: 2px $text-color solid;
+      }
+      font-size: 1.625rem;
+      font-family: "Fredericka the Great", sans-serif;
+      animation: text-shaking infinite 0.5s;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    @include tablet {
+      display: none;
+    }
   }
 }
