@@ -377,6 +377,9 @@ export default function HomePage({
               </div>
             </div>
             <ButtonComponent
+              onClickHandler={() => {
+                handleScrollToElement(contactEle);
+              }}
               btnName="contact"
               btnClassName="btn"
               btnContent="Contact"
