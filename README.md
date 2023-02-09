@@ -1,4 +1,4 @@
-# Build Your Diet
+# Simon Profile
 
 [Deployment link](https://simonprofile.netlify.app)
 
