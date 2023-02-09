@@ -137,7 +137,6 @@ export default function HomePage({
         for (let i = 0; i < projectsData.length; i++) {
           projectsData[i].image_link = gifArr[i];
         }
-        console.log(projectsData);
         setProjectsArr(projectsData);
       })
       .catch((e) => {
@@ -406,6 +405,18 @@ export default function HomePage({
                     {/* SHOW GENERAL INFO */}
                     <div className="home-page__general-infor">
                       <p>{project.description}</p>
+                      {index === 0 && (
+                        <div>
+                          <p>
+                            You can create a new account or use this account
+                            below:
+                          </p>
+                          <p className="home-page__project-account">
+                            <strong>Email </strong>: simon@gmail.com |{" "}
+                            <strong>Password</strong>: 123456Aa@
+                          </p>
+                        </div>
+                      )}
                       <ButtonComponent
                         btnClassName="btn btn--project"
                         btnContent="Tech Stack"

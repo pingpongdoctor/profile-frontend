@@ -250,6 +250,10 @@
   }
 }
 
+.home-page__project-account {
+  margin-top: 0;
+}
+
 .home-page__contact {
   @extend .home-page__projects;
   background-color: rgba(128, 128, 128, 0.131);
