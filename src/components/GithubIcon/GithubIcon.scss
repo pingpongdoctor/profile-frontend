@@ -6,22 +6,22 @@
   width: fit-content;
   border-radius: 50%;
   height: 30px;
-}
 
-.github-icon--side-bar {
-  height: 33px;
-  width: auto;
-  @include tablet {
-    width: 39px;
+  &--side-bar {
+    height: 33px;
+    width: auto;
+    @include tablet {
+      width: 39px;
+    }
+    &:hover {
+      transition: transform 1s;
+      transform: scale(1.2);
+    }
   }
-  &:hover {
-    transition: transform 1s;
-    transform: scale(1.2);
-  }
-}
 
-.github-icon__container {
-  width: 32px;
-  height: auto;
-  object-position: 0px -2px;
+  &__container {
+    width: 32px;
+    height: auto;
+    object-position: 0px -2px;
+  }
 }
