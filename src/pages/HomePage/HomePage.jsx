@@ -417,12 +417,8 @@ export default function HomePage({
                       {index === 0 && (
                         <div>
                           <p>
-                            You can create a new account or use this account
-                            below:
-                          </p>
-                          <p className="home-page__project-account">
-                            <strong>Email </strong>: simon@gmail.com |{" "}
-                            <strong>Password</strong>: 123456Aa@
+                            You can create a new account or use the demo account
+                            to quickly access full website features.
                           </p>
                         </div>
                       )}
