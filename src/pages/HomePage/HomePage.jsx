@@ -320,9 +320,10 @@ export default function HomePage({
               btnClassName="btn"
               btnContent="My Resume"
               onClickHandler={(e) => {
-                e.preventDefault();
-                window.location.href =
-                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view";
+                window.open(
+                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view",
+                  "_blank"
+                );
               }}
             />
           </div>
