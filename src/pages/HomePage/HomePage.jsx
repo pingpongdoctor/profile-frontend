@@ -29,7 +29,13 @@ export default function HomePage({
   contactEle,
 }) {
   //GIF FILE LINKS ARRAY
-  const gifArr = [capstoneGif, brainflixGif, bandsiteGif, profilePic];
+  const gifArr = [
+    capstoneGif,
+    profilePic,
+    lovePetGif,
+    brainflixGif,
+    bandsiteGif,
+  ];
   //DEFINE SKILLS ARRAY
   const skillArr = [
     "HTML",
