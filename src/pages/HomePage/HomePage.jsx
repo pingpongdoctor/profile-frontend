@@ -5,6 +5,7 @@ import capstoneGif from "../../assets/images/capstone.gif";
 import brainflixGif from "../../assets/images/BrainFlix.gif";
 import bandsiteGif from "../../assets/images/BandSite.gif";
 import profilePic from "../../assets/images/profile-pic.png";
+import lovePetGif from "../../assets/images/Love-Pet.gif";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
 import { useWindowSize } from "../../Utils/utils";
