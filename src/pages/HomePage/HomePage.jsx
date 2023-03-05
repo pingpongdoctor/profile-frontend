@@ -321,7 +321,7 @@ export default function HomePage({
               btnContent="My Resume"
               onClickHandler={(e) => {
                 window.open(
-                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view",
+                  "https://drive.google.com/file/d/14hLthsIoN-QhKOxbnR2YQmrRpNhl7sBo/view?usp=share_link",
                   "_blank"
                 );
               }}
