@@ -315,20 +315,15 @@ export default function HomePage({
               patients. I strive to provide the highest quality solutions, and
               take pride in my work.
             </p>
-            {/* {currentWindowWidth < 500 && (
-              <p className="home-page__text">
-                I am a Full-Stack Web Developer who provides the same dedication
-                and care as a doctor. I take pride in my work and aim for
-                excellence.
-              </p>
-            )} */}
             <ButtonComponent
-              onClickHandler={() => {
-                handleScrollToElement(projectEle);
-              }}
               btnName="projects"
               btnClassName="btn"
-              btnContent="Projects"
+              btnContent="My Resume"
+              onClickHandler={(e) => {
+                e.preventDefault();
+                window.location.href =
+                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view";
+              }}
             />
           </div>
         </div>
