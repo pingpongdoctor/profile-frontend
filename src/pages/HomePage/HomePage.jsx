@@ -320,9 +320,10 @@ export default function HomePage({
               btnClassName="btn"
               btnContent="My Resume"
               onClickHandler={(e) => {
-                e.preventDefault();
-                window.location.href =
-                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view";
+                window.open(
+                  "https://drive.google.com/file/d/1wFnS2VqRjRzPEARwH-2GYHpAJih0bVu4/view",
+                  "_blank"
+                );
               }}
             />
           </div>
@@ -339,11 +340,10 @@ export default function HomePage({
               >
                 <h2>Get to know me!</h2>
                 <p>
-                  I am a doctor and blockchain enthusiast who is passionate
-                  about transitioning into web development and loves creating
-                  full-stack single-page applications. I am constantly striving
-                  to refine and make my codes more dynamic, with a focus on
-                  improving the user experience of my websites.
+                  I am a full stack developer naturally curious to learn and
+                  grow in the software development industry. With the emerging
+                  urge to enhance user experience, I consequently desire to
+                  develop high-usability web applications.
                 </p>
                 <p>
                   There is a wealth of knowledge to be gained and shared in the
