@@ -1,11 +1,6 @@
 import "./HomePage.scss";
 import videoBackground from "../../assets/videos/video-background.mp4";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
-import capstoneGif from "../../assets/images/capstone.gif";
-import brainflixGif from "../../assets/images/BrainFlix.gif";
-import bandsiteGif from "../../assets/images/BandSite.gif";
-import profilePic from "../../assets/images/profile-pic.png";
-import lovePetGif from "../../assets/images/Love-Pet.gif";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -14,31 +9,22 @@ import { useWindowSize } from "../../Utils/utils";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 AOS.init();
 const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } =
   process.env;
-const API_URL = process.env.REACT_APP_API_URL || "";
 
 export default function HomePage({
   homeEle,
   aboutEle,
   projectEle,
   contactEle,
+  projectsArr,
 }) {
   //GET CURRENT WINDOWSIZE
   const currentWindowSize = useWindowSize().width;
-  //GIF FILE LINKS ARRAY
-  const gifArr = [
-    capstoneGif,
-    profilePic,
-    lovePetGif,
-    brainflixGif,
-    bandsiteGif,
-  ];
   //DEFINE SKILLS ARRAY
   const frontendArr = [
     "React",
@@ -119,30 +105,6 @@ export default function HomePage({
     }, 950);
   };
 
-  //STATE FOR THE PROJECTS ARRAY
-  const [projectsArr, setProjectsArr] = useState([]);
-  //FUNCTION TO GET ALL PROJECTS
-  const getAllProjects = function () {
-    axios
-      .get(`${API_URL}/projects`)
-      .then((response) => {
-        const projectsData = response.data;
-        for (let i = 0; i < projectsData.length; i++) {
-          projectsData[i].image_link = gifArr[i];
-        }
-        setProjectsArr(projectsData);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
-
-  //USE EFFECT TO GET ALL PROJECTS WHEN THE PAGE IS LOADED
-  useEffect(() => {
-    getAllProjects();
-    // eslint-disable-next-line
-  }, []);
-
   //FUNCTION TO FORMAT TECH STACK ARRAYS
   const formatTechStackArr = function (arr) {
     const string = arr.toString();
@@ -201,7 +163,6 @@ export default function HomePage({
   const navigate = useNavigate();
   const handleNavigateBackToHome = function () {
     navigate("/");
-    handleScrollToElement(homeEle);
   };
   //USE EFFECT TO SET SHOW SUBMIT STATE BASED ON THE CURRENT LOCATION
   useEffect(() => {
@@ -268,7 +229,10 @@ export default function HomePage({
     if (currentLocation === "/") {
       setCountdown(4);
     }
-  });
+  }, [currentLocation, countdown]);
+  useEffect(() => {
+    console.log(countdown);
+  }, [countdown]);
 
   if (!showSubmit) {
     return (
@@ -303,7 +267,7 @@ export default function HomePage({
               }}
             />
 
-            {currentWindowSize > 768 && (
+            {currentWindowSize >= 768 && (
               <p className="home-page__text">
                 I am a Full-Stack Web Developer who approaches coding and bug
                 fixing with the same dedication and care as a doctor treats
