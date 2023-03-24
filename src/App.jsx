@@ -7,8 +7,53 @@ import DrawerComponent from "./components/DrawerComponent/DrawerComponent";
 import { useWindowSize } from "./Utils/utils";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import SideBar from "./components/SideBar/SideBar";
+import capstoneGif from "./assets/images/capstone.gif";
+import brainflixGif from "./assets/images/BrainFlix.gif";
+import bandsiteGif from "./assets/images/BandSite.gif";
+import profilePic from "./assets/images/profile-pic.png";
+import lovePetGif from "./assets/images/Love-Pet.gif";
+import axios from "axios";
+import LoadingPage from "./pages/LoadingPage/LoadingPage";
+const API_URL = process.env.REACT_APP_API_URL || "";
 
 function App() {
+  //MAKE THE PAGE SCROLL TO THE TOP BEFORE IT IS UNLOADED SO THAT IT REMEMBER THE LAST SCROLL POSITION AS THE TOP OF THE PAGE
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+  //GIF FILE LINKS ARRAY
+  const gifArr = [
+    capstoneGif,
+    profilePic,
+    lovePetGif,
+    brainflixGif,
+    bandsiteGif,
+  ];
+  //STATE FOR THE PROJECTS ARRAY
+  const [projectsArr, setProjectsArr] = useState([]);
+  //FUNCTION TO GET ALL PROJECTS
+  const getAllProjects = function () {
+    axios
+      .get(`${API_URL}/projects`)
+      .then((response) => {
+        const projectsData = response.data;
+        for (let i = 0; i < projectsData.length; i++) {
+          projectsData[i].image_link = gifArr[i];
+        }
+        setProjectsArr(projectsData);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  //USE EFFECT TO GET ALL PROJECTS WHEN THE PAGE IS LOADED
+  useEffect(() => {
+    getAllProjects();
+    // eslint-disable-next-line
+  }, []);
+
   //GET THE CURRENT WINDOW SIZE
   const windowSize = useWindowSize();
   //STATE FOR OPENING MENU
@@ -38,9 +83,25 @@ function App() {
   const aboutEle = useRef();
   const projectEle = useRef();
   const contactEle = useRef();
+
+  //UPDATE THE SHOWPAGE STATE WHEN THE PROJECT ARRAY IS FULLY LOADED
+  const [loadingPageState, setLoadingPageState] = useState("");
+  useEffect(() => {
+    if (projectsArr.length > 0) {
+      setTimeout(() => {
+        setLoadingPageState("loading-page__display-none");
+      }, 2000);
+    }
+  }, [projectsArr]);
+
   return (
     <BrowserRouter>
       <div className="App">
+        <LoadingPage
+          windowSize={windowSize}
+          loadingPageState={loadingPageState}
+        />
+
         <HeaderComponent
           handleOnClickMenuIcon={handleOnClickMenuIcon}
           openMenu={openMenu}
@@ -49,6 +110,7 @@ function App() {
           projectEle={projectEle}
           contactEle={contactEle}
         />
+
         <DrawerComponent
           homeEle={homeEle}
           aboutEle={aboutEle}
@@ -56,7 +118,9 @@ function App() {
           contactEle={contactEle}
           drawerDisplay={drawerDisplay}
         />
+
         <SideBar />
+
         <Routes>
           {/* HOMEPAGE ROUTE */}
           <Route
@@ -67,6 +131,7 @@ function App() {
                 aboutEle={aboutEle}
                 projectEle={projectEle}
                 contactEle={contactEle}
+                projectsArr={projectsArr}
               />
             }
           />
@@ -79,6 +144,7 @@ function App() {
                 aboutEle={aboutEle}
                 projectEle={projectEle}
                 contactEle={contactEle}
+                projectsArr={projectsArr}
               />
             }
           />

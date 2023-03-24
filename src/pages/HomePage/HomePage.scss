@@ -5,7 +5,9 @@
   padding-top: 102px;
   position: relative;
   overflow-x: hidden;
-  @include min-window-width(885px) {
+  z-index: 1;
+  background-color: white;
+  @include min-window-width(767px) {
     padding-top: 118px;
   }
 
