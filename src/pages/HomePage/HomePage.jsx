@@ -25,6 +25,7 @@ export default function HomePage({
 }) {
   //GET CURRENT WINDOWSIZE
   const currentWindowSize = useWindowSize().width;
+
   //DEFINE SKILLS ARRAY
   const frontendArr = [
     "React",
@@ -112,10 +113,12 @@ export default function HomePage({
     const finalString = wordArr.join(", ");
     return finalString;
   };
+
   //STATES FOR FORM INPUTS
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
   //FUNCTION TO HANDLE THE INPUT STATES WHEN USERS ARE TYPING
   const handleName = function (event) {
     setName(event.target.value);
@@ -126,6 +129,7 @@ export default function HomePage({
   const handleMessage = function (event) {
     setMessage(event.target.value);
   };
+
   //FUNCTION TO VALIDATE THE INPUTE STATES
   const isNameValid = function () {
     if (name) {
@@ -145,25 +149,31 @@ export default function HomePage({
     }
     return false;
   };
+
   //STATE FOR THE SNACKBAR APPEARANCE
   const [snackbarSuccessOpen, setSnackbarSuccessOpen] = useState(false);
   const [snackbarErrorOpen, setSnackbarErrorOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
   //SET UP
   const form = useRef();
   const submitForm = form.current;
   const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
+
   //STATE TO SHOW THE SUBMISSION BOX
   const [showSubmit, setShowSubmit] = useState(false);
+
   //GET CURRENT LOCATION
   const currentLocation = useLocation().pathname;
+
   //FUNCTION TO NAVIGATE BACK TO HOMEPAGE
   const navigate = useNavigate();
   const handleNavigateBackToHome = function () {
     navigate("/");
   };
+
   //USE EFFECT TO SET SHOW SUBMIT STATE BASED ON THE CURRENT LOCATION
   useEffect(() => {
     if (currentLocation === "/submitted") {
@@ -216,8 +226,10 @@ export default function HomePage({
       setSnackbarErrorOpen(false);
     }, 3000);
   };
+
   //STATE FOR THE COUNTDOWN TIME
   const [countdown, setCountdown] = useState(4);
+
   //USE EFFECT TO COUNTDOWN TIME TO REDIRECT BACK TO HOME PAGE
   useEffect(() => {
     if (currentLocation === "/submitted") {
@@ -230,9 +242,6 @@ export default function HomePage({
       setCountdown(4);
     }
   }, [currentLocation, countdown]);
-  useEffect(() => {
-    console.log(countdown);
-  }, [countdown]);
 
   if (!showSubmit) {
     return (
