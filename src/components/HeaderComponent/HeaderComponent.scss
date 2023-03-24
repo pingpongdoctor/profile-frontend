@@ -2,23 +2,21 @@
 @use "../../styles/partials/variables" as *;
 
 .site-header {
-  padding: 1rem;
+  padding: 1rem 3rem;
   position: fixed;
-  height: 105px;
-  z-index: 1000;
+  z-index: 4;
   width: 100vw;
   background-color: white;
   color: #16213e;
   @include tablet {
-    padding: 1.5rem 2.5rem;
-    height: 121px;
+    padding: 1.5rem 4rem;
   }
 
   &__container {
     display: flex;
     align-items: center;
     @include desktop {
-      max-width: 1200px;
+      max-width: 1152px;
       margin: 0 auto;
     }
   }
@@ -40,7 +38,7 @@
 
   &__list {
     display: none;
-    @include tablet {
+    @include min-window-width(885px) {
       display: block;
       list-style: none;
       padding: 0;
@@ -69,7 +67,7 @@
   &__icon {
     width: 25px;
     height: 25px;
-    @include tablet {
+    @include min-window-width(885px) {
       display: none;
     }
   }

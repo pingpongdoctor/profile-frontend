@@ -3,8 +3,6 @@ import menu from "../../assets/icons/menu.png";
 import cross from "../../assets/icons/cross.png";
 import AvatarComponent from "../AvatarComponent/AvatarComponent";
 import { handleScrollToElement } from "../../Utils/utils";
-import { useWindowSize } from "../../Utils/utils";
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function HeaderComponent({
@@ -15,22 +13,6 @@ export default function HeaderComponent({
   handleOnClickMenuIcon,
   openMenu,
 }) {
-  //STATES FOR THE PROFILE IMAGE SIZE
-  const [width, setWidth] = useState("");
-  const [height, setHeight] = useState("");
-  //GET WINDOW SIZE
-  const windowSize = useWindowSize();
-  //SET WIDTH AND HEIGHT OF THE PROFILE PICTURE BASED ON WINDOW SIZES
-  useEffect(() => {
-    if (windowSize.width >= 768) {
-      setWidth(70);
-      setHeight(70);
-    }
-    if (windowSize.width < 768) {
-      setWidth(50);
-      setHeight(50);
-    }
-  });
   //FUNCTION TO HANDLE SCROLLING TO ELEMETNS WHEN THEY ARE CLICKED
   const handleOnClickToSrollTo = function (event) {
     const id = event.target.id;
@@ -55,7 +37,7 @@ export default function HeaderComponent({
       <div className="site-header">
         <div className="site-header__container">
           <div>
-            <AvatarComponent width={width} height={height} />
+            <AvatarComponent width={70} height={70} />
           </div>
           <p className="site-header__name">Simon Tran</p>
           {!openMenu && (
