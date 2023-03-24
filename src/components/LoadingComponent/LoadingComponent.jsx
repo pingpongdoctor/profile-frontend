@@ -21,13 +21,7 @@ export default function LoadingComponent({
     <div className={`loading-component ${loadingComponentState}`}>
       {textContent && (
         <TypeAnimation
-          sequence={[
-            textContent,
-            1000,
-            () => {
-              console.log("Done");
-            },
-          ]}
+          sequence={[textContent, 1000]}
           wrapper="div"
           speed={75}
           cursor={false}
