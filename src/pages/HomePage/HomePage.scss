@@ -235,16 +235,32 @@
   }
 
   &__project-pic {
-    width: 420px;
-    @include tablet {
-      width: 297px;
+    width: 69%;
+    @include min-window-width(630px) {
+      width: 66%;
     }
-    @include big-tablet {
-      width: 408px;
+    @include min-window-width(670px) {
+      width: 63%;
     }
-    @include small-desktop {
-      width: 480px;
+    @include min-window-width(690px) {
+      width: 58%;
     }
+    @include min-window-width(750px) {
+      width: 55%;
+    }
+    @include min-window-width(768px) {
+      width: 69%;
+    }
+    // width: 420px;
+    // @include tablet {
+    //   width: 297px;
+    // }
+    // @include big-tablet {
+    //   width: 408px;
+    // }
+    // @include small-desktop {
+    //   width: 480px;
+    // }
   }
 
   &__project-text {

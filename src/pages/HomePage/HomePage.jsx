@@ -8,7 +8,6 @@ import profilePic from "../../assets/images/profile-pic.png";
 import lovePetGif from "../../assets/images/Love-Pet.gif";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
-import { useWindowSize } from "../../Utils/utils";
 import { TypeAnimation } from "react-type-animation";
 import { useNavigate, useLocation } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
@@ -58,36 +57,6 @@ export default function HomePage({
     "JWT Token",
     "Passport",
   ];
-  //STATES AND USE EFFECT TO MANIPULATE THE WIDTH OF PROJECT PICTURES BASED ON THE WINDOW WIDTH
-  const [picWidth, setPicWidth] = useState("");
-  const windowSize = useWindowSize();
-  const currentWindowWidth = windowSize.width;
-  useEffect(() => {
-    if (currentWindowWidth > 602 && currentWindowWidth < 768) {
-      setPicWidth("");
-    }
-    if (currentWindowWidth < 602) {
-      setPicWidth(currentWindowWidth - 190);
-    }
-    if (currentWindowWidth < 550) {
-      setPicWidth(currentWindowWidth - 170);
-    }
-    if (currentWindowWidth < 515) {
-      setPicWidth(currentWindowWidth - 160);
-    }
-    if (currentWindowWidth < 470) {
-      setPicWidth(currentWindowWidth - 150);
-    }
-    if (currentWindowWidth < 430) {
-      setPicWidth(currentWindowWidth - 140);
-    }
-    if (currentWindowWidth < 380) {
-      setPicWidth(currentWindowWidth - 130);
-    }
-    if (currentWindowWidth < 350) {
-      setPicWidth(currentWindowWidth - 120);
-    }
-  }, [currentWindowWidth]);
 
   //FUNCTION TO FLIP OVER THE ELEMENT AND SHOW THE DETAILED PROJECT
   const handleOnClickFlipProject = function (event) {
@@ -404,7 +373,6 @@ export default function HomePage({
                       className="home-page__project-pic"
                       src={project.image_link}
                       alt="gif-file"
-                      style={{ width: picWidth }}
                     />
                   </div>
                   {/* FLEX ITEM */}
@@ -504,7 +472,6 @@ export default function HomePage({
                   name="user_name"
                 />
               </div>
-
               <div className="home-page__contact-wrapper">
                 <label className="home-page__contact-label" htmlFor="email">
                   Email
