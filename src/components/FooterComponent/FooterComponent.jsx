@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 export default function FooterComponent() {
   //GET THE CURRENT PATH
   const currentPath = useLocation().pathname;
+  console.log(currentPath);
   if (currentPath !== "/submitted") {
     return (
       <div className="site-footer">

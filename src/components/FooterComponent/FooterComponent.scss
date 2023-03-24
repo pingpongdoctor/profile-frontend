@@ -2,12 +2,14 @@
 @use "../../styles/partials/variables" as *;
 
 .site-footer {
-  padding: 1rem;
+  padding: 1rem 3rem;
   background-color: black;
+  position: relative;
+  z-index: 1;
   @include tablet {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 4rem;
   }
 
   &__container {
@@ -16,7 +18,7 @@
       justify-content: space-between;
     }
     @include desktop {
-      max-width: 1200px;
+      max-width: 1152px;
       margin: 0 auto;
     }
   }
