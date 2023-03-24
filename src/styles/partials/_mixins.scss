@@ -1,5 +1,11 @@
 @use "./variables" as *;
 
+@mixin min-window-width($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: $tablet-width) {
     @content;

@@ -8,9 +8,9 @@ import profilePic from "../../assets/images/profile-pic.png";
 import lovePetGif from "../../assets/images/Love-Pet.gif";
 import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
-import { useWindowSize } from "../../Utils/utils";
 import { TypeAnimation } from "react-type-animation";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useWindowSize } from "../../Utils/utils";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import emailjs from "@emailjs/browser";
@@ -29,6 +29,8 @@ export default function HomePage({
   projectEle,
   contactEle,
 }) {
+  //GET CURRENT WINDOWSIZE
+  const currentWindowSize = useWindowSize().width;
   //GIF FILE LINKS ARRAY
   const gifArr = [
     capstoneGif,
@@ -38,56 +40,41 @@ export default function HomePage({
     bandsiteGif,
   ];
   //DEFINE SKILLS ARRAY
-  const skillArr = [
-    "HTML",
-    "CSS",
+  const frontendArr = [
+    "React",
+    "Redux",
     "JavaScript",
-    "ReactJS",
-    "GitHub",
-    "Agile Development",
-    "Jest",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
     "Sass",
     "BEM",
-    "SQL",
-    "ExpressJS",
-    "NodeJS",
+    "Jest",
+  ];
+
+  const backendArr = [
+    "Node.js",
+    "Express",
+    "MySQL",
     "KnexJS",
-    "MongoDB + Mongoose",
+    "MongoDB",
     "REST API",
     "GraphQL",
-    "JWT Token",
-    "Passport",
+    "Apollo Server",
+    "JWT",
+    "OAuth",
   ];
-  //STATES AND USE EFFECT TO MANIPULATE THE WIDTH OF PROJECT PICTURES BASED ON THE WINDOW WIDTH
-  const [picWidth, setPicWidth] = useState("");
-  const windowSize = useWindowSize();
-  const currentWindowWidth = windowSize.width;
-  useEffect(() => {
-    if (currentWindowWidth > 602 && currentWindowWidth < 768) {
-      setPicWidth("");
-    }
-    if (currentWindowWidth < 602) {
-      setPicWidth(currentWindowWidth - 190);
-    }
-    if (currentWindowWidth < 550) {
-      setPicWidth(currentWindowWidth - 170);
-    }
-    if (currentWindowWidth < 515) {
-      setPicWidth(currentWindowWidth - 160);
-    }
-    if (currentWindowWidth < 470) {
-      setPicWidth(currentWindowWidth - 150);
-    }
-    if (currentWindowWidth < 430) {
-      setPicWidth(currentWindowWidth - 140);
-    }
-    if (currentWindowWidth < 380) {
-      setPicWidth(currentWindowWidth - 130);
-    }
-    if (currentWindowWidth < 350) {
-      setPicWidth(currentWindowWidth - 120);
-    }
-  }, [currentWindowWidth]);
+
+  const otherArr = [
+    "Git",
+    "GitHub",
+    "Postman",
+    "VS Code",
+    "Jira",
+    "Heroku",
+    "Netlify",
+    "Cloudinary",
+  ];
 
   //FUNCTION TO FLIP OVER THE ELEMENT AND SHOW THE DETAILED PROJECT
   const handleOnClickFlipProject = function (event) {
@@ -282,6 +269,7 @@ export default function HomePage({
       setCountdown(4);
     }
   });
+
   if (!showSubmit) {
     return (
       <div ref={homeEle} className="home-page">
@@ -296,6 +284,7 @@ export default function HomePage({
           ></video>
           <div className="home-page__content">
             {/* TYPE ANIMATION */}
+
             <TypeAnimation
               sequence={[
                 "Hi! I am Simon Tran",
@@ -307,14 +296,28 @@ export default function HomePage({
               speed={75}
               cursor={true}
               repeat={Infinity}
-              style={{ marginBottom: "0", color: "white", fontSize: "2rem" }}
+              style={{
+                marginBottom: "0",
+                color: "white",
+                fontSize: "2rem",
+              }}
             />
-            <p className="home-page__text">
-              I am a Full-Stack Web Developer who approaches coding and bug
-              fixing with the same dedication and care as a doctor treats their
-              patients. I strive to provide the highest quality solutions, and
-              take pride in my work.
-            </p>
+
+            {currentWindowSize > 768 && (
+              <p className="home-page__text">
+                I am a Full-Stack Web Developer who approaches coding and bug
+                fixing with the same dedication and care as a doctor treats
+                their patients. I strive to provide the highest quality
+                solutions, and take pride in my work.
+              </p>
+            )}
+            {currentWindowSize < 768 && (
+              <p className="home-page__text">
+                I am a Full-Stack Web Developer who approaches coding and bug
+                fixing with the same dedication and care as a doctor treats
+                their patients.
+              </p>
+            )}
             <ButtonComponent
               btnName="projects"
               btnClassName="btn"
@@ -368,9 +371,27 @@ export default function HomePage({
                 </p>
               </div>
               <div className="home-page__about-flex-item" data-aos="slide-left">
-                <h2>My Skills</h2>
+                <p className="home-page__about-main-text home-page__about-main-text-frontend">
+                  Frontend
+                </p>
                 <ul className="home-page__about-skills">
-                  {skillArr.map((skill, index) => (
+                  {frontendArr.map((skill, index) => (
+                    <li key={index} className="home-page__about-skill">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <p className="home-page__about-main-text">Backend</p>
+                <ul className="home-page__about-skills">
+                  {backendArr.map((skill, index) => (
+                    <li key={index} className="home-page__about-skill">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <p className="home-page__about-main-text">Others</p>
+                <ul className="home-page__about-skills">
+                  {otherArr.map((skill, index) => (
                     <li key={index} className="home-page__about-skill">
                       {skill}
                     </li>
@@ -404,7 +425,6 @@ export default function HomePage({
                       className="home-page__project-pic"
                       src={project.image_link}
                       alt="gif-file"
-                      style={{ width: picWidth }}
                     />
                   </div>
                   {/* FLEX ITEM */}
@@ -416,14 +436,6 @@ export default function HomePage({
                     {/* SHOW GENERAL INFO */}
                     <div className="home-page__general-infor">
                       <p>{project.description}</p>
-                      {index === 0 && (
-                        <div>
-                          <p>
-                            You can create a new account or use the demo account
-                            to quickly access full website features.
-                          </p>
-                        </div>
-                      )}
                       <ButtonComponent
                         btnClassName="btn btn--project"
                         btnContent="Tech Stack"
@@ -504,7 +516,6 @@ export default function HomePage({
                   name="user_name"
                 />
               </div>
-
               <div className="home-page__contact-wrapper">
                 <label className="home-page__contact-label" htmlFor="email">
                   Email
