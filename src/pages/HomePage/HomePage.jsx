@@ -10,6 +10,7 @@ import { handleScrollToElement } from "../../Utils/utils";
 import { useState, useEffect, useRef, forwardRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useWindowSize } from "../../Utils/utils";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import emailjs from "@emailjs/browser";
@@ -28,6 +29,8 @@ export default function HomePage({
   projectEle,
   contactEle,
 }) {
+  //GET CURRENT WINDOWSIZE
+  const currentWindowSize = useWindowSize().width;
   //GIF FILE LINKS ARRAY
   const gifArr = [
     capstoneGif,
@@ -251,6 +254,7 @@ export default function HomePage({
       setCountdown(4);
     }
   });
+
   if (!showSubmit) {
     return (
       <div ref={homeEle} className="home-page">
@@ -265,6 +269,7 @@ export default function HomePage({
           ></video>
           <div className="home-page__content">
             {/* TYPE ANIMATION */}
+
             <TypeAnimation
               sequence={[
                 "Hi! I am Simon Tran",
@@ -276,14 +281,28 @@ export default function HomePage({
               speed={75}
               cursor={true}
               repeat={Infinity}
-              style={{ marginBottom: "0", color: "white", fontSize: "2rem" }}
+              style={{
+                marginBottom: "0",
+                color: "white",
+                fontSize: "2rem",
+              }}
             />
-            <p className="home-page__text">
-              I am a Full-Stack Web Developer who approaches coding and bug
-              fixing with the same dedication and care as a doctor treats their
-              patients. I strive to provide the highest quality solutions, and
-              take pride in my work.
-            </p>
+
+            {currentWindowSize > 768 && (
+              <p className="home-page__text">
+                I am a Full-Stack Web Developer who approaches coding and bug
+                fixing with the same dedication and care as a doctor treats
+                their patients. I strive to provide the highest quality
+                solutions, and take pride in my work.
+              </p>
+            )}
+            {currentWindowSize < 768 && (
+              <p className="home-page__text">
+                I am a Full-Stack Web Developer who approaches coding and bug
+                fixing with the same dedication and care as a doctor treats
+                their patients.
+              </p>
+            )}
             <ButtonComponent
               btnName="projects"
               btnClassName="btn"
@@ -384,14 +403,6 @@ export default function HomePage({
                     {/* SHOW GENERAL INFO */}
                     <div className="home-page__general-infor">
                       <p>{project.description}</p>
-                      {index === 0 && (
-                        <div>
-                          <p>
-                            You can create a new account or use the demo account
-                            to quickly access full website features.
-                          </p>
-                        </div>
-                      )}
                       <ButtonComponent
                         btnClassName="btn btn--project"
                         btnContent="Tech Stack"

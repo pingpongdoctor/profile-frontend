@@ -7,7 +7,10 @@
   overflow-x: hidden;
 
   &__intro {
-    height: 350px;
+    height: 450px;
+    @include min-window-width(500px) {
+      height: 420px;
+    }
     @include tablet {
       height: 400px;
     }
@@ -23,7 +26,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
     gap: 1rem;
     text-align: center;
     padding: 1rem;
@@ -31,10 +33,13 @@
     right: 0;
     left: 0;
     margin: 0 auto;
-    width: 100vw;
+    margin-top: 1rem;
+    width: 80vw;
+    @include min-window-width(500px) {
+      margin-top: 3rem;
+    }
     @include tablet {
       margin-top: 4rem;
-      width: 80vw;
     }
     @include desktop {
       margin-top: 6rem;
@@ -43,9 +48,12 @@
 
   &__video {
     object-fit: cover;
-    height: 350px;
+    height: 450px;
     width: 100vw;
     position: absolute;
+    @include min-window-width(500px) {
+      height: 420px;
+    }
     @include tablet {
       height: 400px;
     }
@@ -55,12 +63,12 @@
   }
 
   &__about {
-    padding: 1rem;
+    padding: 1rem 3rem;
     background-color: rgba(128, 128, 128, 0.131);
     padding-top: 2rem;
     padding-bottom: 3.5rem;
     @include tablet {
-      padding: 1.5rem 2.5rem;
+      padding: 1.5rem 4rem;
       padding-top: 4rem;
       padding-bottom: 6rem;
     }
@@ -68,7 +76,7 @@
 
   &__about-container {
     @include desktop {
-      max-width: 1200px;
+      max-width: 1152px;
       margin: 0 auto;
     }
   }
@@ -141,12 +149,12 @@
   }
 
   &__projects {
-    padding: 0 1rem;
+    padding: 0 3rem;
     padding-top: 2rem;
     padding-bottom: 3.5rem;
     background-color: rgba(128, 128, 128, 0.067);
     @include tablet {
-      padding: 0 2.5rem;
+      padding: 0 4rem;
       padding-top: 4rem;
       padding-bottom: 6rem;
     }
@@ -154,7 +162,7 @@
 
   &__projects-container {
     @include desktop {
-      max-width: 1200px;
+      max-width: 1152px;
       margin: 0 auto;
     }
   }
@@ -251,16 +259,6 @@
     @include min-window-width(768px) {
       width: 69%;
     }
-    // width: 420px;
-    // @include tablet {
-    //   width: 297px;
-    // }
-    // @include big-tablet {
-    //   width: 408px;
-    // }
-    // @include small-desktop {
-    //   width: 480px;
-    // }
   }
 
   &__project-text {
