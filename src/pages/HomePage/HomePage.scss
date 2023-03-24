@@ -2,9 +2,12 @@
 @use "../../styles/partials/variables" as *;
 
 .home-page {
-  padding-top: 121px;
+  padding-top: 102px;
   position: relative;
   overflow-x: hidden;
+  @include min-window-width(885px) {
+    padding-top: 118px;
+  }
 
   &__intro {
     height: 450px;
@@ -128,12 +131,28 @@
   }
 
   &__about-skill {
-    padding: 0.8rem 1rem;
+    padding: 0.5rem;
     background-color: rgba(128, 128, 128, 0.169);
     border-radius: 5px;
     &:hover {
       transition: transform 1s;
-      transform: scale(1.2);
+      transform: scale(1.1);
+    }
+  }
+
+  &__about-main-text {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    @include tablet {
+      margin-top: 1.2rem;
+    }
+  }
+
+  &__about-main-text-frontend {
+    margin-top: 1.5rem;
+    @include tablet {
+      margin-top: 2rem;
     }
   }
 
@@ -280,7 +299,7 @@
 
   &__contact-container {
     @include tablet {
-      max-width: 1200px;
+      max-width: 1152px;
       margin: 0 auto;
     }
   }

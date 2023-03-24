@@ -13,13 +13,12 @@
   }
 
   &__list--disappear {
-    // animation: drawer-disappear 1s;
     display: none;
   }
 
   &__list--appear {
     animation: drawer-appear 0.5s;
-    top: 104.789px;
+    top: 102px;
     opacity: 1;
     z-index: 4;
     display: block;

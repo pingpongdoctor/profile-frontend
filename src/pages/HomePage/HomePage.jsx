@@ -40,25 +40,40 @@ export default function HomePage({
     bandsiteGif,
   ];
   //DEFINE SKILLS ARRAY
-  const skillArr = [
-    "HTML",
-    "CSS",
+  const frontendArr = [
+    "React",
+    "Redux",
     "JavaScript",
-    "ReactJS",
-    "GitHub",
-    "Agile Development",
-    "Jest",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
     "Sass",
     "BEM",
-    "SQL",
-    "ExpressJS",
-    "NodeJS",
+    "Jest",
+  ];
+
+  const backendArr = [
+    "Node.js",
+    "Express",
+    "MySQL",
     "KnexJS",
-    "MongoDB + Mongoose",
+    "MongoDB",
     "REST API",
     "GraphQL",
-    "JWT Token",
-    "Passport",
+    "Apollo Server",
+    "JWT",
+    "OAuth",
+  ];
+
+  const otherArr = [
+    "Git",
+    "GitHub",
+    "Postman",
+    "VS Code",
+    "Jira",
+    "Heroku",
+    "Netlify",
+    "Cloudinary",
   ];
 
   //FUNCTION TO FLIP OVER THE ELEMENT AND SHOW THE DETAILED PROJECT
@@ -356,9 +371,27 @@ export default function HomePage({
                 </p>
               </div>
               <div className="home-page__about-flex-item" data-aos="slide-left">
-                <h2>My Skills</h2>
+                <p className="home-page__about-main-text home-page__about-main-text-frontend">
+                  Frontend
+                </p>
                 <ul className="home-page__about-skills">
-                  {skillArr.map((skill, index) => (
+                  {frontendArr.map((skill, index) => (
+                    <li key={index} className="home-page__about-skill">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <p className="home-page__about-main-text">Backend</p>
+                <ul className="home-page__about-skills">
+                  {backendArr.map((skill, index) => (
+                    <li key={index} className="home-page__about-skill">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <p className="home-page__about-main-text">Others</p>
+                <ul className="home-page__about-skills">
+                  {otherArr.map((skill, index) => (
                     <li key={index} className="home-page__about-skill">
                       {skill}
                     </li>
