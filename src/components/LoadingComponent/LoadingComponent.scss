@@ -1,0 +1,38 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.loading-component {
+  background-color: #26282f;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  z-index: 5;
+
+  &__display-none {
+    animation: opacity-decrease 1s linear;
+    z-index: 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+}
