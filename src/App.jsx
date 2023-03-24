@@ -14,6 +14,7 @@ import profilePic from "./assets/images/profile-pic.png";
 import lovePetGif from "./assets/images/Love-Pet.gif";
 import axios from "axios";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 const API_URL = process.env.REACT_APP_API_URL || "";
 
 function App() {
@@ -85,11 +86,11 @@ function App() {
   const contactEle = useRef();
 
   //UPDATE THE SHOWPAGE STATE WHEN THE PROJECT ARRAY IS FULLY LOADED
-  const [loadingPageState, setLoadingPageState] = useState("");
+  const [loadingComponentState, setLoadingComponentState] = useState("");
   useEffect(() => {
     if (projectsArr.length > 0) {
       setTimeout(() => {
-        setLoadingPageState("loading-page__display-none");
+        setLoadingComponentState("loading-component__display-none");
       }, 2000);
     }
   }, [projectsArr]);
@@ -97,11 +98,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <LoadingPage
+        {/* LOADING COMPONENT */}
+        <LoadingComponent
           windowSize={windowSize}
-          loadingPageState={loadingPageState}
+          loadingComponentState={loadingComponentState}
         />
 
+        {/* HEADER */}
         <HeaderComponent
           handleOnClickMenuIcon={handleOnClickMenuIcon}
           openMenu={openMenu}
@@ -111,6 +114,7 @@ function App() {
           contactEle={contactEle}
         />
 
+        {/* DROPDOWN MENU*/}
         <DrawerComponent
           homeEle={homeEle}
           aboutEle={aboutEle}
@@ -119,6 +123,7 @@ function App() {
           drawerDisplay={drawerDisplay}
         />
 
+        {/*SIDE BAR */}
         <SideBar />
 
         <Routes>
@@ -135,6 +140,7 @@ function App() {
               />
             }
           />
+
           {/* SUBMITTED ROUTE */}
           <Route
             path="/submitted"
@@ -149,6 +155,8 @@ function App() {
             }
           />
         </Routes>
+
+        {/* FOOTER COMPONENT */}
         <FooterComponent />
       </div>
     </BrowserRouter>
