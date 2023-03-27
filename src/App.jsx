@@ -72,6 +72,14 @@ function App() {
       setDrawerDisplay("drawer__list--disappear");
     }
   };
+  //FUNCTION TO MAKE DRAWER DISAPPEAR
+  const handleMakeDrawerDisappear = function () {
+    setDrawerDisplay("drawer__list--disappear");
+  };
+  //FUNCTION TO CLOSE THE MENU
+  const handleOpenMenuState = function () {
+    setOpenMenu(false);
+  };
   //USE EFFECT TO SET THE OPEN MENU AND THE DRAWER APPEARANCE CLASSNAME STATES BASED ON THE WINDOW SIZE
   useEffect(() => {
     if (windowSize.width >= 768) {
@@ -121,6 +129,8 @@ function App() {
           projectEle={projectEle}
           contactEle={contactEle}
           drawerDisplay={drawerDisplay}
+          handleMakeDrawerDisappear={handleMakeDrawerDisappear}
+          handleOpenMenuState={handleOpenMenuState}
         />
 
         {/*SIDE BAR */}
