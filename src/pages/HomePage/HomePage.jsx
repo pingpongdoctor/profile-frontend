@@ -262,7 +262,7 @@ export default function HomePage({
               sequence={[
                 "Hi! I am Simon Tran",
                 1000,
-                "Welcome to my profile website",
+                "Welcome to my portfolio",
                 2000,
               ]}
               wrapper="div"
