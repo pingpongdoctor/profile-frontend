@@ -7,6 +7,8 @@ export default function DrawerComponent({
   projectEle,
   aboutEle,
   contactEle,
+  handleMakeDrawerDisappear,
+  handleOpenMenuState,
 }) {
   //FUNCTION TO HANDLE SCROLLING TO ELEMETNS WHEN THEY ARE CLICKED
   const handleOnClickToSrollTo = function (event) {
@@ -23,6 +25,8 @@ export default function DrawerComponent({
     if (id === "drawer-contact") {
       handleScrollToElement(contactEle);
     }
+    handleMakeDrawerDisappear();
+    handleOpenMenuState();
   };
   return (
     <div className="drawer">
