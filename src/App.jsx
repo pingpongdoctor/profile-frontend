@@ -13,7 +13,6 @@ import bandsiteGif from "./assets/images/BandSite.gif";
 import profilePic from "./assets/images/profile-pic.png";
 import lovePetGif from "./assets/images/Love-Pet.gif";
 import axios from "axios";
-import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 const API_URL = process.env.REACT_APP_API_URL || "";
 

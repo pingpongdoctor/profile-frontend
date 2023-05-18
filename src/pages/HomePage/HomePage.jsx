@@ -29,9 +29,10 @@ export default function HomePage({
   //DEFINE SKILLS ARRAY
   const frontendArr = [
     "React",
+    "TypeScript",
+    "Next.js",
     "Redux",
     "JavaScript",
-    "TypeScript",
     "HTML5",
     "CSS3",
     "Sass",
@@ -46,10 +47,10 @@ export default function HomePage({
     "KnexJS",
     "MongoDB",
     "REST API",
-    "GraphQL",
-    "Apollo Server",
     "JWT",
     "OAuth",
+    "GraphQL",
+    "Apollo Server",
   ];
 
   const otherArr = [
@@ -60,6 +61,7 @@ export default function HomePage({
     "Jira",
     "Heroku",
     "Netlify",
+    "Vercel",
     "Cloudinary",
   ];
 
