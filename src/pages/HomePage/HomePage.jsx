@@ -36,7 +36,7 @@ export default function HomePage({
     "Redux",
     "SWR",
     "TanStack",
-    "StoryBook",
+    "Storybook",
     "HTML5",
     "CSS3",
     "Sass",
