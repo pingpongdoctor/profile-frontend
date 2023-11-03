@@ -29,13 +29,18 @@ export default function HomePage({
   //DEFINE SKILLS ARRAY
   const frontendArr = [
     "React",
-    "TypeScript",
     "Next.js",
-    "Redux",
+    "Vite",
+    "TypeScript",
     "JavaScript",
+    "Redux",
+    "SWR",
+    "TanStack",
+    "StoryBook",
     "HTML5",
     "CSS3",
     "Sass",
+    "Tailwindcss",
     "BEM",
     "Jest",
   ];
@@ -44,25 +49,26 @@ export default function HomePage({
     "Node.js",
     "Express",
     "MySQL",
+    "PostgreSQL",
     "KnexJS",
+    "Prisma",
     "MongoDB",
+    "Mongoose",
     "REST API",
+    "GraphQL",
     "JWT",
     "OAuth",
-    "GraphQL",
-    "Apollo Server",
   ];
 
   const otherArr = [
     "Git",
     "GitHub",
     "Postman",
-    "VS Code",
+    "Visual Studio Code",
+    "Auth0",
+    "Customer.io",
     "Jira",
-    "Heroku",
-    "Netlify",
-    "Vercel",
-    "Cloudinary",
+    "Notion",
   ];
 
   //FUNCTION TO FLIP OVER THE ELEMENT AND SHOW THE DETAILED PROJECT
@@ -364,7 +370,7 @@ export default function HomePage({
                     </li>
                   ))}
                 </ul>
-                <p className="home-page__about-main-text">Others</p>
+                <p className="home-page__about-main-text">Development Tools</p>
                 <ul className="home-page__about-skills">
                   {otherArr.map((skill, index) => (
                     <li key={index} className="home-page__about-skill">
