@@ -367,7 +367,7 @@ export default function HomePage({
                     </li>
                   ))}
                 </ul>
-                <p className="home-page__about-main-text">Others</p>
+                <p className="home-page__about-main-text">Development Tools</p>
                 <ul className="home-page__about-skills">
                   {otherArr.map((skill, index) => (
                     <li key={index} className="home-page__about-skill">
