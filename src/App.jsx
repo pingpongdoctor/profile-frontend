@@ -41,10 +41,10 @@ function App() {
       .get(`${API_URL}/projects`)
       .then((response) => {
         const projectsData = response.data;
+        projectsData.sort((a, b) => a.index_value - b.index_value);
         for (let i = 0; i < projectsData.length; i++) {
           projectsData[i].image_link = gifArr[i];
         }
-        projectsData.sort((a, b) => a.index_value - b.index_value);
         setProjectsArr(projectsData);
       })
       .catch((e) => {
