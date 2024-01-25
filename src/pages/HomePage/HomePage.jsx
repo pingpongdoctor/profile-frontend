@@ -411,6 +411,16 @@ export default function HomePage({
                     className="home-page__project-text"
                   >
                     <h2>{project.name}</h2>
+                    <a
+                      href={project.githubLink}
+                      style={{
+                        fontWeight: 600,
+                        textDecoration: "underline",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      GitHub Repo
+                    </a>
                     {/* SHOW GENERAL INFO */}
                     <div>
                       <p>{project.description}</p>
@@ -436,7 +446,6 @@ export default function HomePage({
                           <span style={{ animationDelay: "2.4s" }}>i</span>
                           <span style={{ animationDelay: "2.6s" }}>n</span>
                           <span style={{ animationDelay: "2.8s" }}>k</span>
-                          {/* Deployment Link */}
                         </a>
                         <ButtonComponent
                           btnClassName="btn btn--project"
