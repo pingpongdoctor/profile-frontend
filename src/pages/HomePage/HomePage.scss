@@ -229,13 +229,10 @@
     animation: textclip 2s linear infinite;
     border-radius: 5px;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     span {
       animation: letter-flip 3s infinite;
       display: inline-block;
-    }
-    @include tablet {
-      margin-bottom: 1.5rem;
     }
   }
 
