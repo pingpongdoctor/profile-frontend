@@ -11,6 +11,13 @@
     padding-top: 118px;
   }
 
+  &__general-infor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__intro {
     height: 450px;
     @include min-window-width(500px) {

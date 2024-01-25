@@ -412,15 +412,40 @@ export default function HomePage({
                   >
                     <h2>{project.name}</h2>
                     {/* SHOW GENERAL INFO */}
-                    <div className="home-page__general-infor">
+                    <div>
                       <p>{project.description}</p>
-                      <ButtonComponent
-                        btnClassName="btn btn--project"
-                        btnContent="Tech Stack"
-                        btnName="tech-stack"
-                        onClickHandler={handleOnClickFlipProject}
-                        btnId={index}
-                      />
+                      <div className="home-page__general-infor">
+                        <a
+                          className="home-page__project-link"
+                          href={project.deployment_link}
+                          target="_blanket"
+                        >
+                          {/* LETTER FLIP ANIMATION */}
+                          <span style={{ animationDelay: "0.2s" }}>D</span>
+                          <span style={{ animationDelay: "0.4s" }}>e</span>
+                          <span style={{ animationDelay: "0.6" }}>p</span>
+                          <span style={{ animationDelay: "0.8s" }}>l</span>
+                          <span style={{ animationDelay: "1s" }}>o</span>
+                          <span style={{ animationDelay: "1.2s" }}>y</span>
+                          <span style={{ animationDelay: "1.4s" }}>m</span>
+                          <span style={{ animationDelay: "1.6s" }}>e</span>
+                          <span style={{ animationDelay: "1.8s" }}>n</span>
+                          <span style={{ animationDelay: "2s" }}>t</span>
+                          &nbsp;
+                          <span style={{ animationDelay: "2.2s" }}>L</span>
+                          <span style={{ animationDelay: "2.4s" }}>i</span>
+                          <span style={{ animationDelay: "2.6s" }}>n</span>
+                          <span style={{ animationDelay: "2.8s" }}>k</span>
+                          {/* Deployment Link */}
+                        </a>
+                        <ButtonComponent
+                          btnClassName="btn btn--project"
+                          btnContent="Tech Stack"
+                          btnName="tech-stack"
+                          onClickHandler={handleOnClickFlipProject}
+                          btnId={index}
+                        />
+                      </div>
                     </div>
                     {/* SHOW DETAILS */}
                     <div className="home-page__detail-infor home-page__project-display-none">
@@ -434,32 +459,9 @@ export default function HomePage({
                           {formatTechStackArr(project.tech_stack.backend)}.
                         </p>
                       )}
-                      <a
-                        className="home-page__project-link"
-                        href={project.deployment_link}
-                        target="_blanket"
-                      >
-                        {/* LETTER FLIP ANIMATION */}
-                        <span style={{ animationDelay: "0.2s" }}>D</span>
-                        <span style={{ animationDelay: "0.4s" }}>e</span>
-                        <span style={{ animationDelay: "0.6" }}>p</span>
-                        <span style={{ animationDelay: "0.8s" }}>l</span>
-                        <span style={{ animationDelay: "1s" }}>o</span>
-                        <span style={{ animationDelay: "1.2s" }}>y</span>
-                        <span style={{ animationDelay: "1.4s" }}>m</span>
-                        <span style={{ animationDelay: "1.6s" }}>e</span>
-                        <span style={{ animationDelay: "1.8s" }}>n</span>
-                        <span style={{ animationDelay: "2s" }}>t</span>
-                        &nbsp;
-                        <span style={{ animationDelay: "2.2s" }}>L</span>
-                        <span style={{ animationDelay: "2.4s" }}>i</span>
-                        <span style={{ animationDelay: "2.6s" }}>n</span>
-                        <span style={{ animationDelay: "2.8s" }}>k</span>
-                        {/* Deployment Link */}
-                      </a>
                       <ButtonComponent
                         btnClassName="btn btn--project"
-                        btnContent="Project Information"
+                        btnContent="Back"
                         btnName="project-infor"
                         onClickHandler={handleOnClickFlipProject}
                         btnId={index}
