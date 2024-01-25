@@ -12,6 +12,7 @@ import brainflixGif from "./assets/images/BrainFlix.gif";
 import bandsiteGif from "./assets/images/BandSite.gif";
 import profilePic from "./assets/images/profile-pic.png";
 import lovePetGif from "./assets/images/Love-Pet.gif";
+import glowyLab from "./assets/images/glowy-lab.png";
 import axios from "axios";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 const API_URL = process.env.REACT_APP_API_URL || "";
@@ -25,6 +26,7 @@ function App() {
   }, []);
   //GIF FILE LINKS ARRAY
   const gifArr = [
+    glowyLab,
     capstoneGif,
     profilePic,
     lovePetGif,
@@ -42,6 +44,7 @@ function App() {
         for (let i = 0; i < projectsData.length; i++) {
           projectsData[i].image_link = gifArr[i];
         }
+        projectsData.sort((a, b) => a.index_value - b.index_value);
         setProjectsArr(projectsData);
       })
       .catch((e) => {

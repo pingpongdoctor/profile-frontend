@@ -28,41 +28,44 @@ export default function HomePage({
 
   //DEFINE SKILLS ARRAY
   const frontendArr = [
+    "Next.js",
     "React",
     "TypeScript",
-    "Next.js",
-    "Redux",
     "JavaScript",
+    "Python",
     "HTML5",
-    "CSS3",
+    "CSS",
+    "Tailwind",
     "Sass",
-    "BEM",
+    "Redux",
     "Jest",
   ];
 
   const backendArr = [
-    "Node.js",
+    "Node",
     "Express",
-    "MySQL",
-    "KnexJS",
     "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "Prisma",
+    "Knex",
     "REST API",
-    "JWT",
-    "OAuth",
     "GraphQL",
-    "Apollo Server",
+    "JWT",
+    "OAuth 2.0",
+    "OIDC",
   ];
 
   const otherArr = [
     "Git",
     "GitHub",
     "Postman",
+    "Agile Development",
     "VS Code",
+    "Sanity",
+    "Storybook",
     "Jira",
-    "Heroku",
-    "Netlify",
-    "Vercel",
-    "Cloudinary",
+    "Notion",
   ];
 
   //FUNCTION TO FLIP OVER THE ELEMENT AND SHOW THE DETAILED PROJECT
