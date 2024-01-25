@@ -459,7 +459,7 @@ export default function HomePage({
                       </a>
                       <ButtonComponent
                         btnClassName="btn btn--project"
-                        btnContent="Project Infor"
+                        btnContent="Project Information"
                         btnName="project-infor"
                         onClickHandler={handleOnClickFlipProject}
                         btnId={index}
