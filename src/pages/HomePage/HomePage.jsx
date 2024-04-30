@@ -33,12 +33,13 @@ export default function HomePage({
     "TypeScript",
     "JavaScript",
     "Python",
-    "HTML5",
-    "CSS",
+    "Sanity Headless CMS",
     "Tailwind",
     "Sass",
     "Redux",
+    "React Context API",
     "Jest",
+    "Storybook"
   ];
 
   const backendArr = [
@@ -50,20 +51,22 @@ export default function HomePage({
     "Prisma",
     "Knex",
     "REST API",
-    "GraphQL",
     "JWT",
     "OAuth 2.0",
-    "OIDC",
+    "Auth0",
+    "Stripe",
+    "Ngrok",
+    "Sendgrid",
+    "Pusher",
+    "Upstash",
+    "PlanetScale",
+    "Supabase"
   ];
 
   const otherArr = [
     "Git",
-    "GitHub",
     "Postman",
-    "Agile Development",
-    "VS Code",
-    "Sanity",
-    "Storybook",
+    "Agile Frameworks (Kanban, Scrum)",
     "Jira",
     "Notion",
   ];
