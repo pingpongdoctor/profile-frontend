@@ -101,7 +101,7 @@ function App() {
     if (projectsArr.length > 0) {
       setTimeout(() => {
         setLoadingComponentState("loading-component__display-none");
-      }, 2000);
+      }, 1000);
     }
   }, [projectsArr]);
 
