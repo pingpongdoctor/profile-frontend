@@ -395,7 +395,7 @@ export default function HomePage({
           <div className="home-page__projects-container">
             <h1 className="home-page__projects-heading">My Projects</h1>
             {projectsArr.length > 0 &&
-              projectsArr.map((project, index) => (
+              projectsArr.filter((project)=>{return project.name!=="Build Your Diet"}).map((project, index) => (
                 <div key={index} className={`home-page__project`}>
                   {/* FLEX ITEM */}
                   <div
