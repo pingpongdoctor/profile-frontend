@@ -29,7 +29,6 @@ function App() {
     glowyLab,
     capstoneGif,
     profilePic,
-    lovePetGif,
     brainflixGif,
     bandsiteGif,
   ];
